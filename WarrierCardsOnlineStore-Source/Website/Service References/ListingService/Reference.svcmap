@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="10597e92-8016-4871-a463-3c24d1f90d48" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:81/ServiceConfigs/ListingService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ListingService.wsdl" MetadataType="Wsdl" ID="b854db0c-64ab-4dfb-914d-27c472da1be1" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/ListingService.svc?wsdl" />
+    <MetadataFile FileName="ListingService.xsd" MetadataType="Schema" ID="3d272740-c2c5-418e-bba0-96e37ee75087" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/ListingService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ListingService1.xsd" MetadataType="Schema" ID="a3690b79-0f67-4a83-a4e2-bf0e4bd29bf0" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/ListingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ListingService2.xsd" MetadataType="Schema" ID="4fcf092d-6a70-44ea-9415-97c94264bc32" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/ListingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ListingService3.xsd" MetadataType="Schema" ID="5ff91d93-127f-4a1f-85b7-bd5b7844a26e" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/ListingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ListingService4.xsd" MetadataType="Schema" ID="9f5e7bfd-6f9a-400d-a58d-71dd9a27bb2e" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/ListingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ListingService.disco" MetadataType="Disco" ID="98c3327f-4167-4fe0-9d7d-d9342a6c18c1" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/ListingService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

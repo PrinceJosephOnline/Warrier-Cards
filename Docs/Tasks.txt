@@ -1,0 +1,41 @@
+Create a simple WCF service
+  No need for BLL, DAL, Entities
+  Just the service layer, with a method that deals with dummy data
+  One method that returns - image + price, accepts criteria (Color, LP, HP, Religion ) + index
+  Dedicated end point for images
+
+Create a simple MVC website
+  - a master page - search bar
+  - a home page - carousel display + latest/popular items display + filter panel
+
+
+--Note: loading image, use a different service, dont't send the image with search results, load images on a separate asynch call
+-- will go for pagination & lazy loading
+  
+
+Warrier Cards Online Store
+WarrierCardsOnlineStore
+G:\Warrier Cards\WarrierCardsOnlineStore
+
+Paiting, Fabric, Floral theme, Handmade, Laser cut, Light weight, Multi color offset,
+peacock theme, RadhaKrishnan theme, Single Sheet, Small size
+
+
+
+model number
+ColorVarient
+Similar items --> algorithm
+Select by color ( when adding cards, ask percentage)
+latest view
+chat options/get a quote/book a call back
+how abt card content - online, emal, phone
+payments? remote deals?
+shortlisting
+Discounts/offers
+coupon
+SEO works
+Subscribe notifications, new arrivals
+  options for  cards except wedding
+track order
+
+discuss photobox

@@ -1,0 +1,7 @@
+G:\Warrier Cards\WarrierCardsOnlineStore\bin\WarrierCards.Service.DataObjects.dll
+G:\Warrier Cards\WarrierCardsOnlineStore\bin\WarrierCards.Service.DataObjects.pdb
+G:\Warrier Cards\WarrierCardsOnlineStore\Service\Bin\WarrierCards.Service.DataObjects.dll
+G:\Warrier Cards\WarrierCardsOnlineStore\Service\Bin\WarrierCards.Service.DataObjects.pdb
+G:\Warrier Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Service.DataObjects\obj\Debug\WarrierCards.Service.DataObjects.csprojResolveAssemblyReference.cache
+G:\Warrier Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Service.DataObjects\obj\Debug\WarrierCards.Service.DataObjects.dll
+G:\Warrier Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Service.DataObjects\obj\Debug\WarrierCards.Service.DataObjects.pdb

@@ -1,0 +1,29 @@
+﻿@model List<WarrierCards.Website.ListingService.CardItem>
+<section class="catalogue">
+
+    @foreach (var card in Model)
+    {
+        var cardOrientationStyle = card.IsPortrait ? "portrait" : "landscape";
+        <article>
+            <div class="card-image">
+                <img src="@card.CardMainImagePath" class="@cardOrientationStyle" />
+            </div>
+
+            <div class="card-name">
+                @card.CardName
+            </div>
+
+            <div class="card-summary">
+                <div class="card-model">Model: @card.CardModelNumber</div>
+                <div class="float-right">
+                    @if (@card.CardOrginalPrice != card.CardSellingPrice)
+                    {
+                        <span class="original-price">&#8377;@card.CardOrginalPrice </span>
+                    }
+                    <span class="selling-price">&#8377;@card.CardSellingPrice </span>
+
+                </div>
+            </div>
+        </article>
+    }
+</section>

@@ -1,0 +1,1 @@
+<%@ ServiceHost Debug="true" CodeBehind="C#" Service="WarrierCards.Service.Services.CardListings.ListingService" %>

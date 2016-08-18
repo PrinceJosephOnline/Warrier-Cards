@@ -1,0 +1,5 @@
+G:\Warrier Cards\WarrierCardsOnlineStore\WarrierCards.Website.dll
+G:\Warrier Cards\WarrierCardsOnlineStore\WarrierCards.Website.pdb
+G:\Warrier Cards\WarrierCardsOnlineStore-Source\Website\obj\Release\WarrierCards.Website.csprojResolveAssemblyReference.cache
+G:\Warrier Cards\WarrierCardsOnlineStore-Source\Website\obj\Release\WarrierCards.Website.dll
+G:\Warrier Cards\WarrierCardsOnlineStore-Source\Website\obj\Release\WarrierCards.Website.pdb

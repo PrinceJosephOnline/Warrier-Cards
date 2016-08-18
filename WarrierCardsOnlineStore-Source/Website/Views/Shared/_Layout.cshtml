@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Warrier Cards Online Store - @ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div class="content-wrapper" >
+            <div class="float-left custom-header">
+                <img src="images/Warrier-Cards-Logo.png" alt="" />
+                @*<p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>*@
+            </div>
+            <div class="float-right" style="width: 80%;">
+                <section id="login">
+                    <b>Call us at: +91-9744-023-389</b>
+                </section>
+                <table class="tableStyle">
+                    <tr>
+                        <td>
+
+                            <input type="text" class="search-textbox" />
+                            <input type="submit" class="search-button" value="Go" />
+
+                        </td>
+                        <td><a href="index.html">
+                            <img src="images/cart.png" alt="" />
+                            Cart
+                        </a>
+                            <a href="index.html">Login</a> 
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - Warrier Cards</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
