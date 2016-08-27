@@ -6,7 +6,8 @@ using System.Text;
 namespace WarrierCards.Service.DataObjects.Common
 {
     public enum CardTypes
-    { 
+    {
+        AllWeddingCard,
         HinduWeddingCard,
         ChristianWeddingCard,
         MuslimWeddingCard,

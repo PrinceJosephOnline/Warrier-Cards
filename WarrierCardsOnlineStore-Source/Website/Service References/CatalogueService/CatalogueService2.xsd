@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://egenious:81/ServiceConfigs/CatalogueService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://egenious:81/ServiceConfigs/CatalogueService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects.Common" />
+  <xs:complexType name="SearchCriteria">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CardColors" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects.Common" minOccurs="0" name="CardType" type="q2:CardTypes" />
+      <xs:element minOccurs="0" name="HighPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ItemsReturnedPerRequest" type="xs:int" />
+      <xs:element minOccurs="0" name="Keywords" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastItemIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="LowPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchCriteria" nillable="true" type="tns:SearchCriteria" />
+  <xs:complexType name="ArrayOfCardItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CardItem" nillable="true" type="tns:CardItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCardItem" nillable="true" type="tns:ArrayOfCardItem" />
+  <xs:complexType name="CardItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardId" type="xs:int" />
+      <xs:element minOccurs="0" name="CardMainImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardModelNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardOrginalPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CardSellingPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsPortrait" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardItem" nillable="true" type="tns:CardItem" />
+  <xs:complexType name="CardDetails">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CardItem">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CardImages" nillable="true" type="q3:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CardDetails" nillable="true" type="tns:CardDetails" />
+</xs:schema>

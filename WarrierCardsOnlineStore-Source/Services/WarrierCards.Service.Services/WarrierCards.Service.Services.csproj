@@ -48,10 +48,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardListings\DummyData.cs" />
+    <Compile Include="Catalogue\DummyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CardListings\IListingService.cs" />
-    <Compile Include="CardListings\ListingService.cs" />
+    <Compile Include="Catalogue\ICatalogueService.cs" />
+    <Compile Include="Catalogue\CatalogueService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

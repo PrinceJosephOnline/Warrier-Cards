@@ -2,10 +2,16 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarrierCards.Service.Services", "Services\WarrierCards.Service.Services\WarrierCards.Service.Services.csproj", "{BEE21A5D-23CA-4A3C-B3A7-07E109B63A63}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EB914C90-6A14-47AA-ABD3-7FE9DD334450} = {EB914C90-6A14-47AA-ABD3-7FE9DD334450}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarrierCards.Service.DataObjects", "Services\WarrierCards.Service.DataObjects\WarrierCards.Service.DataObjects.csproj", "{EB914C90-6A14-47AA-ABD3-7FE9DD334450}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarrierCards.Website", "Website\WarrierCards.Website.csproj", "{BAD3AD1F-0E85-4684-AE12-B991C605AE83}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BEE21A5D-23CA-4A3C-B3A7-07E109B63A63} = {BEE21A5D-23CA-4A3C-B3A7-07E109B63A63}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

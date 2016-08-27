@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WarrierCards.Website.ListingService;
+using WarrierCards.Website.CatalogueService;
 using WarrierCards.Website.Models;
 
 namespace WarrierCards.Website.Controllers
@@ -12,18 +12,18 @@ namespace WarrierCards.Website.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome";
+            ViewBag.Title = "Welcome";
 
             SearchCriteria criteria = new SearchCriteria();
             criteria.LowPrice = 21;
 
-            IListingService listingService = new ListingServiceClient();
+            ICatalogueService catalogueService = new CatalogueServiceClient();
             HomeModel homeModel = new HomeModel();
-            homeModel.BestSellers = listingService.GetCardsList(criteria);
+            homeModel.BestSellers = catalogueService.GetCardsList(criteria);
 
             criteria.LowPrice = 21;
             criteria.HighPrice = 150;
-            homeModel.PremiumCards = listingService.GetCardsList(criteria);
+            homeModel.PremiumCards = catalogueService.GetCardsList(criteria);
 
             return View(homeModel);
         }

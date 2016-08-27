@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardDetails.cs" />
     <Compile Include="CardItem.cs" />
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

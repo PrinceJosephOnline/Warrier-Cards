@@ -14,6 +14,8 @@ namespace WarrierCards.Service.DataObjects
             this.ItemsReturnedPerRequest = 20;
         }
 
+        public string Keywords { get; set; }
+
         public decimal LowPrice { get; set; }
 
         public decimal HighPrice { get; set; }

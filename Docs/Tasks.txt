@@ -17,9 +17,8 @@ Warrier Cards Online Store
 WarrierCardsOnlineStore
 G:\Warrier Cards\WarrierCardsOnlineStore
 
-Paiting, Fabric, Floral theme, Handmade, Laser cut, Light weight, Multi color offset,
+Painting, Fabric, Floral theme, Handmade, Laser cut, Light weight, Multi color offset,
 peacock theme, RadhaKrishnan theme, Single Sheet, Small size
-
 
 
 model number
@@ -39,3 +38,18 @@ Subscribe notifications, new arrivals
 track order
 
 discuss photobox
+
+Stock count, display out of stock filter, stock management
+
+
+Similar items --> algorithm
+When a user views an item, we need to showcase color varients and related items.
+How can we identify it? an algorithm? or keeping relationships won't be a best fit, except for color varients.
+
+seller tax: PAN, VAT / TIN , CST 
+
+extra column for printing charges?
+card color - just one or multiple definition for a card
+
+
+A seller will be allowed to sell only cards that are not already added in the system by any seller.

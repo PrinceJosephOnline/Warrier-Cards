@@ -9,36 +9,49 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+
     <header>
-        <div class="content-wrapper" >
-            <div class="float-left custom-header">
-                <img src="images/Warrier-Cards-Logo.png" alt="" />
+        <div class="content-wrapper">
+            <div class="header-left">
+                <a href="~/">
+                    <img src="@Url.Content("~/images/Warrier-Cards-Logo.png")" alt="" />
+                </a>
                 @*<p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>*@
             </div>
-            <div class="float-right" style="width: 80%;">
-                <section id="login">
-                    <b>Call us at: +91-9744-023-389</b>
-                </section>
-                <table class="tableStyle">
+            <div class="header-right">
+                <table id="header-nav">
+                    <tr>
+                        <td colspan="2">
+                            Call us at: +91-9744-023-389
+                        </td>
+                    </tr>
                     <tr>
                         <td>
-
-                            <input type="text" class="search-textbox" />
-                            <input type="submit" class="search-button" value="Go" />
-
+                            <form action="@Url.Action("", "catalogue")" method="post">
+                                <input id="txtKeywords" type="text" class="search-textbox" />
+                                <input type="submit" value="" class="search-button" onclick="OnKeywordSearch(this.form);" />
+                            </form>
                         </td>
-                        <td><a href="index.html">
-                            <img src="images/cart.png" alt="" />
-                            Cart
-                        </a>
-                            <a href="index.html">Login</a> 
-
+                        <td>
+                            <a href="~/" class="nav-shortlist">Shortlist <sup class="sup"></sup></a>
+                            <a href="~/" class="nav-cart">Cart <sup class="sup"></sup></a>
+                            <a href="~/" class="nav-user">Login</a>
                         </td>
                     </tr>
                 </table>
+
             </div>
         </div>
+        <div id="menu-bar" style="float:none;clear:both;background: #359ac7;margin:0 auto;text-align: center;padding:8px 0;">
+            <a href="~/Catalogue/Hindu-wedding-cards">Hindu Wedding Cards </a> |
+            <a href="~/Catalogue/Muslim-wedding-cards">Muslim Wedding Cards </a> |           
+            <a href="~/Catalogue/Christian-wedding-cards">Christian Wedding Cards </a> |
+            <a href="~/Catalogue/Christian-wedding-cards">Invitation Cards </a> |
+            <a href="~/">Design your Card </a> |
+            <a href="~/">Sell With Us </a>
+        </div>
     </header>
+
     <div id="body">
         @RenderSection("featured", required: false)
         <section class="content-wrapper main-content clear-fix">

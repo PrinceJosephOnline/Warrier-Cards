@@ -32,3 +32,26 @@ G:\Warrier Cards\WarrierCardsOnlineStore-Source\Website\bin\DotNetOpenAuth.OAuth
 G:\Warrier Cards\WarrierCardsOnlineStore-Source\Website\bin\DotNetOpenAuth.OAuth.xml
 G:\Warrier Cards\WarrierCardsOnlineStore-Source\Website\bin\DotNetOpenAuth.OpenId.xml
 G:\Warrier Cards\WarrierCardsOnlineStore-Source\Website\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\WarrierCards.Website.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\WarrierCards.Website.pdb
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\Microsoft.Web.Infrastructure.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\Microsoft.Web.WebPages.OAuth.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\System.Web.Helpers.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\System.Web.Razor.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\System.Web.WebPages.Deployment.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\System.Web.WebPages.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\System.Web.WebPages.Razor.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\WebMatrix.Data.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\WebMatrix.WebData.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\Microsoft.Web.Infrastructure.xml
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\System.Web.Helpers.xml
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\System.Web.Razor.xml
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\System.Web.WebPages.xml
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\System.Web.WebPages.Deployment.xml
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\System.Web.WebPages.Razor.xml
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\WebMatrix.Data.xml
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\Microsoft.Web.WebPages.OAuth.xml
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\WebMatrix.WebData.xml
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\obj\Debug\WarrierCards.Website.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\obj\Debug\WarrierCards.Website.pdb
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\obj\Debug\WarrierCards.Website.csprojResolveAssemblyReference.cache

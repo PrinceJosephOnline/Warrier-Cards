@@ -25,7 +25,6 @@ namespace WarrierCards.Service.DataObjects
         [DataMember]
         public decimal CardOrginalPrice { get; set; }
 
-        // to be stored in DB
         [DataMember]
         public decimal CardSellingPrice { get; set; }
 

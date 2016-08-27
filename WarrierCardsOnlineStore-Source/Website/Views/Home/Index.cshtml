@@ -2,232 +2,90 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<div class="border-style">
-    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 300px; overflow: hidden; visibility: hidden;">
-        <!-- Loading Screen -->
-        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
-            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-            <div style="position: absolute; display: block; background: url('../../Images/Rolling/loading.gif') no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-        </div>
-        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 300px; overflow: hidden;">
-            <div data-p="112.50" style="display: none;">
-                <img data-u="image" src="../../Images/Rolling/Warrier-Cards-Welcome.jpg" />
+<div class="float-left full-width">
+    <div class="data-wrapper">
+        <div class="float-left" style="display: block; width: 70%;">
+
+            <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 300px; overflow: hidden; visibility: hidden;">
+                <!-- Loading Screen -->
+                <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                    <div style="position: absolute; display: block; background: url('../../Images/Rolling/loading.gif') no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                </div>
+                <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 300px; overflow: hidden;">
+                    <div data-p="112.50" style="display: none;">
+                        <img data-u="image" src="../../Images/Rolling/Warrier-Cards-Welcome.jpg" />
+                    </div>
+                    <div data-p="112.50" style="display: none;">
+                        <img data-u="image" src="../../Images/Rolling/Warrier-Cards-Testimonials.jpg" />
+                    </div>
+                </div>
+                <!-- Bullet Navigator -->
+                <div data-u="navigator" class="jssorb05" style="bottom: 16px; right: 16px;" data-autocenter="1">
+                    <!-- bullet navigator item prototype -->
+                    <div data-u="prototype" style="width: 16px; height: 16px;"></div>
+                </div>
+                <!-- Arrow Navigator -->
+                <span data-u="arrowleft" class="jssora12l" style="top: 0px; left: 0px; width: 30px; height: 46px;" data-autocenter="2"></span>
+                <span data-u="arrowright" class="jssora12r" style="top: 0px; right: 0px; width: 30px; height: 46px;" data-autocenter="2"></span>
             </div>
-            <div data-p="112.50" style="display: none;">
-                <img data-u="image" src="../../Images/Rolling/Warrier-Cards-Testimonials.jpg" />
-            </div>
+
         </div>
-        <!-- Bullet Navigator -->
-        <div data-u="navigator" class="jssorb05" style="bottom: 16px; right: 16px;" data-autocenter="1">
-            <!-- bullet navigator item prototype -->
-            <div data-u="prototype" style="width: 16px; height: 16px;"></div>
+        <div class="float-left" style="width: 29%; min-width: 250px; background: #dedede; height: 283px;">
+            <ul class="feature-list">
+                <li class="cards"><a href="#">Wide range of cards</a></li>
+                <li class="easy"><a href="#">Quick & Easy Purchase</a></li>
+                <li class="pay"><a href="#">Secure Payment options</a></li>
+                <li class="refund"><a href="#">Refund on Sample Orders</a></li>
+                <li class="support"><a href="#">24*7 support</a></li>
+            </ul>
         </div>
-        <!-- Arrow Navigator -->
-        <span data-u="arrowleft" class="jssora12l" style="top: 0px; left: 0px; width: 30px; height: 46px;" data-autocenter="2"></span>
-        <span data-u="arrowright" class="jssora12r" style="top: 0px; right: 0px; width: 30px; height: 46px;" data-autocenter="2"></span>
     </div>
 </div>
-<br />
 
-<section class="category">
-    <article class="style1">
+@*<section class="data-wrapper">
+    <article class="style1 hover-link">
         <h3>Hindu Wedding Cards</h3>
         Take a look at inherent fine quality of Exclusive Hindu Wedding Cards. 
          The range of exclusive wedding cards on this web site is specifically designed keeping your vivid imagination in mind.
-        <a href="#HinduWeddingCards">View all</a><br />
+        <a href="Catalogue/Hindu-wedding-cards">View all</a>
+        <br />
         <br />
     </article>
-        
-    <article class="style2">
+    <article class="style2 hover-link">
         <h3>Muslim Wedding Cards</h3>
         Take a look at inherent fine quality of Exclusive Hindu Wedding Cards. 
          The range of exclusive wedding cards on this web site is specifically designed keeping your vivid imagination in mind.
-        <a href="#MuslimWeddingCards">View all</a><br />
+        <a href="Catalogue/Muslim-wedding-cards">View all</a>
+        <br />
         <br />
     </article>
-
-    <article class="style3">
+    <article class="style3 hover-link">
         <h3>Christian Wedding Cards</h3>
         Take a look at inherent fine quality of Exclusive Hindu Wedding Cards. 
          The range of exclusive wedding cards on this web site is specifically designed keeping your vivid imagination in mind.
-        <a href="#ChristianWeddingCards">View all</a><br />
+        <a href="Catalogue/Christian-wedding-cards">View all</a>
+        <br />
         <br />
     </article>
 
-</section>
-
-<br clear="all" />
-<div class="category-headers">
-    <h4>Best Sellers</h4>
-</div>
-@Html.Partial("CardListing", Model.BestSellers)
-
-@*<section class="catalogue">
-    <article>
-        <!--<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>-->
-        <a href="generic.html">
-            <h2>Magna</h2>
-            <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-            </div>
-        </a>
-    </article>
-    <article>
-        <!--<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>-->
-        <a href="generic.html">
-            <h2>Lorem</h2>
-            <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-            </div>
-        </a>
-    </article>
-    <article>
-        <!--<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>-->
-        <a href="generic.html">
-            <h2>Feugiat</h2>
-            <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-            </div>
-        </a>
-    </article>
-    <article>
-        <!--<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>-->
-        <a href="generic.html">
-            <h2>Feugiat</h2>
-            <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-            </div>
-        </a>
-    </article>
-    <article>
-        <!--<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>-->
-        <a href="generic.html">
-            <h2>Feugiat</h2>
-            <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-            </div>
-        </a>
-    </article>
-    <article>
-        <!--<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>-->
-        <a href="generic.html">
-            <h2>Feugiat</h2>
-            <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-            </div>
-        </a>
-    </article>
 </section>*@
 
-<br clear="all" />
-<div class="category-headers">
-    <h4>Premium Cards</h4>
+<br class="clear" />
+
+<h4 class="content-header">Best Sellers</h4>
+<div class="data-wrapper">
+    @Html.Partial("CardListing", Model.BestSellers)
 </div>
-@Html.Partial("CardListing", Model.PremiumCards)
 
+<br class="clear" />
+<br class="clear" />
+<br class="clear" />
 
-@*<section class="catalogue">
-    <article>
-        <!--<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>-->
-        <a href="generic.html">
-            <h2>Magna</h2>
-            <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-            </div>
-        </a>
-    </article>
-    <article>
-        <!--<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>-->
-        <a href="generic.html">
-            <h2>Lorem</h2>
-            <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-            </div>
-        </a>
-    </article>
-    <article>
-        <!--<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>-->
-        <a href="generic.html">
-            <h2>Feugiat</h2>
-            <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-            </div>
-        </a>
-    </article>
-    <article>
-        <!--<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>-->
-        <a href="generic.html">
-            <h2>Feugiat</h2>
-            <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-            </div>
-        </a>
-    </article>
-    </section>*@
-
-
-@*@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-            <p>
-                To learn more about ASP.NET MVC visit
-                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
-                If you have any questions about ASP.NET MVC visit
-                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
-            </p>
-        </div>
-    </section>
-}*@
-@*<h3>We suggest the following:</h3>
-<ol class="round">
-    <li class="one">
-        <h5>Getting Started</h5>
-        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-        enables a clean separation of concerns and that gives you full control over markup
-        for enjoyable, agile development. ASP.NET MVC includes many features that enable
-        fast, TDD-friendly development for creating sophisticated applications that use
-        the latest web standards.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
-    </li>
-
-    <li class="two">
-        <h5>Add NuGet packages and jump-start your coding</h5>
-        NuGet makes it easy to install and update free libraries and tools.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
-    </li>
-
-    <li class="three">
-        <h5>Find Web Hosting</h5>
-        You can easily find a web hosting company that offers the right mix of features
-        and price for your applications.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-    </li>
-</ol>*@
+<h4 class="content-header">Premium Cards</h4>
+<div class="data-wrapper">
+    @Html.Partial("CardListing", Model.PremiumCards)
+</div>
 
 @section scripts {
     <script type="text/javascript" src="../../Scripts/jssor.slider-21.1.5.mini.js"></script>

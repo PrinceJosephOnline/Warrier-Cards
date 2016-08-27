@@ -1,29 +1,32 @@
-﻿@model List<WarrierCards.Website.ListingService.CardItem>
+﻿@model List<WarrierCards.Website.CatalogueService.CardItem>
+
 <section class="catalogue">
 
     @foreach (var card in Model)
     {
         var cardOrientationStyle = card.IsPortrait ? "portrait" : "landscape";
-        <article>
-            <div class="card-image">
-                <img src="@card.CardMainImagePath" class="@cardOrientationStyle" />
-            </div>
+        
+            <article data-id="@card.CardId">
+                <div class="card-image">
+                    <img src="@card.CardMainImagePath" class="@cardOrientationStyle" />
+                </div>
 
-            <div class="card-name">
-                @card.CardName
-            </div>
-
-            <div class="card-summary">
-                <div class="card-model">Model: @card.CardModelNumber</div>
-                <div class="float-right">
+                <div class="card-name">
+                    @card.CardName
+                </div>
+                <div class="card-basics">
+                    <span class="card-model">Code: @card.CardModelNumber</span> |
                     @if (@card.CardOrginalPrice != card.CardSellingPrice)
                     {
-                        <span class="original-price">&#8377;@card.CardOrginalPrice </span>
+                        <span class="original-price">&#8377;@card.CardOrginalPrice</span>
                     }
-                    <span class="selling-price">&#8377;@card.CardSellingPrice </span>
-
+                    <span class="selling-price">&#8377;@card.CardSellingPrice</span>
                 </div>
-            </div>
-        </article>
+                <div class="card-actions">
+                    <a href="javascript:void(0)" onclick="OnShortlist(this, @card.CardId);" class="shortlist">Shortlist</a>
+                    <a href="#@card.CardName-Quick-view" class="quick-view">Quick view</a>
+                    <a href="~/catalogue/card-details/@card.CardId" class="view-details">View Details</a>
+                </div>
+            </article>
     }
 </section>
