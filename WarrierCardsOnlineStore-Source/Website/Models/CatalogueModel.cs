@@ -19,6 +19,6 @@ namespace WarrierCards.Website.Models
 
         public SearchCriteria Criteria { get; set; }
 
-        public List<CardItem> CardsCollection { get; set; }
+        public List<CardBasicInfo> CardsCollection { get; set; }
     }
 }

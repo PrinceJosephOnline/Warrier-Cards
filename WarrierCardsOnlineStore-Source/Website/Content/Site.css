@@ -44,15 +44,13 @@ a {
 
 /*.hover-link {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
-    filter: alpha(opacity=50); /* IE 5-7 */
-    -moz-opacity: 0.5; /* Netscape */
-    -khtml-opacity: 0.5; /* Safari 1.x */
-    opacity: 0.5;
-    cursor: pointer;
-    background: #e2e2e2;
-}*/
+filter: alpha(opacity=50); /* IE 5-7 */
+-moz-opacity: 0.5; /* Netscape */
+-khtml-opacity: 0.5; /* Safari 1.x */
+opacity: 0.5; cursor: pointer; background: #e2e2e2;
+}
 
-header, footer, hgroup,
+*/ header, footer, hgroup,
 nav, section {
     display: block;
 }
@@ -234,7 +232,9 @@ footer {
             color: #ff1;
         }
 
-
+#menu-bar a {
+    font-weight: normal;
+}
 
 li.cards {
     background: url('../Images/collection.png') no-repeat #939696 0.5em center;
@@ -280,6 +280,106 @@ li.support {
     height: 22px;
     vertical-align: middle;
     border: none;
+}
+
+/* Card Details view styling */
+.center-panel {
+    width: 80%;
+    display: table;
+    margin: 0px auto;
+}
+
+.large-pane {
+    width: 60%;
+    padding: 1em;
+    display: table;
+    border: 1px solid #dedede;
+}
+
+.small-pane {
+    width: 30%;
+    min-width: 250px;
+    padding: 1em;
+    margin-left: 1em;
+    border: 1px solid #dedede;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.gallery {
+    display: table;
+    margin: 0px auto;
+    height: 100%;
+}
+
+.gallery-main {
+    width: 100%;
+    height: 300px;
+    min-height: 300px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.thumbnails {
+    margin: 0px auto;
+    display: table-row;
+}
+
+    .thumbnails img {
+        margin: 0 2px;
+        padding: 2px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid #dedede;
+    }
+
+        .thumbnails img.selected {
+            border: 1px solid #FFA404;
+        }
+
+.details-list {
+    padding: 0;
+    margin: 0;
+}
+
+    .details-list li {
+        list-style: none;
+    }
+
+.warrier-buttons div {
+    margin-top: 20px;
+}
+
+.warrier-buttons input[type="button"], input.send {
+    font-size: 0.9em;
+    width: 75%;
+    height: 2.8em;
+    color: #000;
+    cursor: pointer;
+    border: 1px solid #808080;
+}
+
+input[type="button"].buy-now {
+    background: url('../../images/buy-now.png') no-repeat #FFA404 3% center;
+}
+
+input[type="button"].add-to-cart {
+    background: url('../../images/cart-black.png') no-repeat #FFA404 3% center;
+}
+
+input[type="button"].sample {
+    background: url('../../images/sample.png') no-repeat #FFDF6D 3% center;
+}
+
+input[type="button"].enquiry, input.send {
+    background: url('../../images/enquiry.png') no-repeat #FFDF6D 3% center;
+}
+
+input.shortlist {
+    background-color: #FFDF6D;
+    background-position-x: 3%;
 }
 
 /* site title
@@ -374,6 +474,60 @@ li.support {
     background-position: -315px -37px;
 }
 
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 0px auto; /* 15% from the top and centered */
+    margin-top: 7%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal-main {
+    margin: 0px auto;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.tooltip {
+    position: fixed;
+    z-index: 100;
+    background: #fff;
+    padding: 4px 5px;
+    display: none;
+    color: #ad100b;
+    font: normal 11px Verdana;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
 /* login
 ----------------------------------------------------------*/
 #login {
@@ -775,6 +929,17 @@ aside {
 }
 
 /* forms */
+.warrier-user {
+    padding: 0 10px;
+    clear: left;
+    float: none;
+    max-width: 500px;
+}
+
+    .warrier-user input[type="text"] {
+        width: 100%;
+    }
+
 fieldset {
     border: none;
     margin: 0;

@@ -1,149 +1,18 @@
 ﻿@model WarrierCards.Website.Models.CardDetailsModel
-<style type="text/css">
-    .center-panel {
-        width: 80%;
-        display: table;
-        margin: 0px auto;
-    }
-
-    .large-pane {
-        width: 60%;
-        padding: 1em;
-        display: table;
-        border: 1px solid #dedede;
-    }
-
-    .small-pane {
-        width: 30%;
-        min-width: 250px;
-        padding: 1em;
-        margin-left: 1em;
-        border: 1px solid #dedede;
-    }
-
-    .align-center {
-        text-align: center;
-    }
-
-    #imageContainer {
-        width: 100%;
-        height: 380px;
-        min-height: 380px;
-        text-align: center;
-        vertical-align: middle;
-        display: table-cell;
-        margin: 0px auto;
-    }
-
-        #imageContainer img {
-            vertical-align: middle;
-            text-align: center;
-            margin: 0px auto;
-        }
-
-    .thumbnails {
-        height: 60px;
-        margin: 0px auto;
-        display: table-row;
-    }
-
-        .thumbnails img {
-            margin: 0 2px;
-            padding: 2px;
-            border: 1px solid #dedede;
-        }
-
-    .details-list {
-        padding: 0;
-        margin: 0;
-    }
-
-        .details-list li {
-            list-style: none;
-        }
-
-    .warrier-buttons div {
-        margin-top: 20px;
-    }
-
-    .warrier-buttons input[type="button"] {
-        font-size: 0.9em;
-        width: 75%;
-        height: 2.8em;
-        color: #000;
-        cursor: pointer;
-        border: 1px solid #808080;
-    }
-
-    input[type="button"].buy-now {
-        background: url('../../images/buy-now.png') no-repeat #FFA404 3% center;
-    }
-
-    input[type="button"].add-to-cart {
-        background: url('../../images/cart-black.png') no-repeat #FFA404 3% center;
-    }
-
-    input[type="button"].sample {
-        background: url('../../images/sample.png') no-repeat #FFDF6D 3% center;
-    }
-
-    input[type="button"].enquiry {
-        background: url('../../images/enquiry.png') no-repeat #FFDF6D 3% center;
-    }
-
-    input[type="button"].warrier-button {
-        background-color: #FFDF6D;
-        background-position-x: 3%;
-    }
-</style>
 
 <div class="center-panel">
     <h2>Home &#10093;&#10093; @Model.CardDetails.CardName </h2>
     <div class="float-left large-pane">
-        <div id="imageContainer">
-            <img src="@Model.CardDetails.CardMainImagePath" />
-        </div>
-        <div class="align-center thumbnails">
-            @foreach (var image in Model.CardDetails.CardImages)
-            { 
-                <img src="@image" height="50" width="50" />
-            }
-        </div>
+        @{ 
+            Model.CardDetails.CardImages.Insert(0, Model.CardDetails.CardMainImagePath);
+            Html.RenderPartial("CardGallery", Model.CardDetails.CardImages); 
+        }
     </div>
 
     <div class="float-left small-pane warrier-buttons">
-        <ul class="details-list">
-            <li>Code: @Model.CardDetails.CardModelNumber</li>
-            @if (Model.CardDetails.CardOrginalPrice != Model.CardDetails.CardSellingPrice)
-            {
-                <li>Price: <span class="original-price">&#8377;@Model.CardDetails.CardOrginalPrice</span></li>
-            }
-            <li>Sale: <span class="selling-price">&#8377;@Model.CardDetails.CardSellingPrice</span></li>
-            <li>Shipping: Extra 
-                <a href="#" style="font-size: .8em; text-decoration: underline; color: #0094ff;">Check</a>
-            </li>
-        </ul>
-
-        <article data-id="@Model.CardDetails.CardId" style="width: 100%;">
-            <div class="align-center">
-                Quantity:
-            <input data-id="@Model.CardDetails.CardId" data-type="quantity" type="text" maxlength="5"
-                 style="width: 50px; height: 14px;font-size: 1em;" value="250" /><br />
-                <input type="button" value="Add to Cart" class="add-to-cart" 
-                    onclick="OnAddToCart(@Model.CardDetails.CardId,  $(this).prevAll('input[type=text]').val())"/><br />
-                <input type="button" value="Buy Now" class="buy-now" /><br />
-            </div>
-
-
-            <div class="align-center">
-                <input type="button" value="Shortlist" class="shortlist warrier-button" 
-                    onclick="OnShortlist(this, @Model.CardDetails.CardId,  $(this).prevAll('input[type=text]').val());" /><br />
-                <input type="button" value="Buy Sample" class="sample" /><br />
-                <input type="button" value="Send Enquiry" class="enquiry" /><br />
-            </div>
-        </article>
+        @{  Html.RenderPartial("CardBasicView", (WarrierCards.Website.CatalogueService.CardBasicInfo)Model.CardDetails);  }
     </div>
-
+    
     <div class="clear" style="margin-top: 10px;"></div>
 
     <div class="float-left large-pane">

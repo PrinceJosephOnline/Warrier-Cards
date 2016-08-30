@@ -1,11 +1,12 @@
 ﻿$(document).ready(function () {
-    //LinkStyling();
-    //$.removeCookie('wc_cart', { path: '/' });
-    //$.removeCookie('wc_cart');
-    //$.removeCookie('wc_cart', { path: '/' });
-    //$.removeCookie('wc_cart');
-    //alert($.cookie('wc_shortlist'));
 
+    //$.removeCookie('wc_cart', { path: '/' });
+    //$.removeCookie('wc_cart');
+    //$.removeCookie('wc_shortlist', { path: '/' });
+    //$.removeCookie('wc_shortlist');
+
+    //alert($.cookie('wc_shortlist'));
+    //LinkStyling();
     DisplayShortlistCountAndHighlight();
     DisplayCartCount();
     DisplayQuantityFromCart();
@@ -54,8 +55,7 @@ function DisplayShortlistCountAndHighlight() {
 }
 
 // Display cart item count in header
-function DisplayCartCount(count)
-{
+function DisplayCartCount(count) {
     if (count == null) {
         if ($.cookie('wc_cart') != null) {
             var cookieData = JSON.parse($.cookie('wc_cart'));
@@ -67,13 +67,13 @@ function DisplayCartCount(count)
 }
 
 // If an item added to card is viewed, show the quanity from cart
-function DisplayQuantityFromCart()
-{
+function DisplayQuantityFromCart() {
     // if cookie is null or no quantity textbox
-    if ($.cookie('wc_cart') == null || $('input[data-type=quantity]') == null) { return; }
+    if ($.cookie('wc_cart') == null) { return; }
+    if ($('article').find('input[data-type="quantity"]') == null) { return; }
     var cookieData = JSON.parse($.cookie('wc_cart'));
     $.each(cookieData, function (i, obj) {
-        var quantityInput = $('input[data-id=' + obj.id + ']');
+        var quantityInput = $('article[data-id="' + obj.id + '"]').find('input[data-type="quantity"]')
         if (quantityInput != null) { $(quantityInput).val(obj.quantity); }
     });
 }
@@ -106,23 +106,30 @@ function OnCardSelected(cardId, isShortlist, quantity, action) {
     var value = cookieData.length > 0 ? cookieData.length : '';
     if (isShortlist) {
         $('.nav-shortlist').find('.sup').html(value);
+        $('article[data-id=' + cardId + ']').find('.shortlist').addClass('shortlisted');
     } else {
         DisplayCartCount(value);
     }
-
 }
 
-function OnAddToCart(cardId, quantity)
-{
-    alert('quantity: ' + quantity);
+function OnAddToCart(source) {
+    var cardId = $(source).closest('article').data("id");
+    if (cardId < 0) { alert('Sorry, an error occurred, please try again later'); return; }
+    var quantity = $('article[data-id="' + cardId + '"]').find('input[data-type="quantity"]').val();
+    if (quantity < 50) { alert('Minimum quantity required is 50'); return; }
     OnCardSelected(cardId, false, quantity, ActionEnum.add);
+    QuickMessage(source, '1 item added to cart (Quantity: ' + quantity + ')');
 }
 
 function OnRemoveFromCart(cardId) {
     OnCardSelected(cardId, false, 0, ActionEnum.remove);
 }
 
-function OnShortlist(source, cardId, quantity) {
+function OnShortlist(source) {
+    var cardId = $(source).closest('article').data("id");
+    if (cardId < 0) { alert('Sorry, an error occurred, please try again later'); return; }
+    var quantity = $('article[data-id="' + cardId + '"]').find('input[data-type="quantity"]').val();
+
     var isRemove = $(source).hasClass('shortlisted');
     if (isRemove) {
         OnCardSelected(cardId, true, quantity, ActionEnum.remove);
@@ -134,6 +141,76 @@ function OnShortlist(source, cardId, quantity) {
     }
 }
 
-// TODO remove from shortlist / cart - PRINCE
+function OnBuySample(source) {
+    var cardId = $(source).closest('article').data("id");
+    if (cardId < 0) { alert('Sorry, an error occurred, please try again later'); return; }
+    OnCardSelected(cardId, false, 1, ActionEnum.add);
+    $('article[data-id="' + cardId + '"]').find('input[data-type="quantity"]').val(1);
+    QuickMessage(source, '1 item added to Sample cart');
+}
+function BringImageIntoView(img) {
+    var newSrc = $(img).attr('src');
+    var mainImg = $(img).parent().parent().find('img').first();
+    $(mainImg).attr('src', newSrc);
+    $(img).siblings('img').removeClass('selected');
+    $(img).addClass('selected');
+}
 
-// TODO: update quantity
+function QuickView(cardId) {
+    $.ajax({
+        url: 'http://' + window.location.host + "/quick-view/" + cardId,
+        success: function (result) {
+            ShowDialog(result);
+        }
+    });
+}
+
+function QuickMessage(source, message) {
+    var position = $(source).position();
+    var y = position.top - $(window).scrollTop() - 10;
+    var x = position.left - $(window).scrollLeft() + 10;
+    var infoBox = $('#divQuickMessage');
+    infoBox.html(message);
+    infoBox.css({ 'display': 'block', 'top': y, 'left': x });
+    infoBox.delay(1000).fadeOut('slow');
+}
+
+function ShowDialog(data) {
+    var content = '<div class="modal-content">' +
+    '<span onclick="Close();" class="close">x</span>' +
+    '<div class="modal-main clear">' + data + '</div>'
+    '</div>';
+    $('#myModal').html(content);
+    $('#myModal').css('display', 'block');
+    $('.modal-content').width($('.modal-main div:first-child').width());
+}
+
+function Close() {
+    $('#myModal').css('display', 'none')
+}
+
+function OnBuyNow(source) {
+    var cardId = $(source).closest('article').data("id");
+    if (cardId < 0) { alert('Sorry, an error occurred, please try again later'); return; }
+    var quantity = $('article[data-id="' + cardId + '"]').find('input[data-type="quantity"]').val();
+    quantity = quantity == 1 ? 250 : quantity;
+    OnCardSelected(cardId, false, quantity, ActionEnum.add);
+
+    alert('Buy now - View Cart - coming soon'); alert(window.location.host);
+    window.location.href = 'http://' + window.location.host; // TODO: PRINCE - Go To Cart
+}
+
+function SendEnquiry(source)
+{
+    var cardId = $(source).closest('article').data("id");
+    if (cardId < 0) { alert('Sorry, an error occurred, please try again later'); return; }
+    $.ajax({
+        url: 'http://' + window.location.host + "/send-enquiry/" + cardId,
+        success: function (result) {
+            ShowDialog(result);
+        },
+        failure: function (result) {
+            alert(result);
+        }
+    });
+}

@@ -14,16 +14,30 @@ namespace WarrierCards.Website
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-               name: "CardDetails",
-               url: "catalogue/card-details/{cardId}",
-               defaults: new { controller = "Catalogue", action = "CardDetails" }
-           );
-
-            routes.MapRoute(
                name: "Catalogue",
                url: "catalogue/{keywords}",
                defaults: new { controller = "Catalogue", action = "Index" }
            );
+
+            routes.MapRoute(
+               name: "Card",
+               url: "{action}/{cardId}",
+               defaults: new { controller = "Catalogue", action = "Index" }
+           );
+
+           // routes.MapRoute(
+           //    name: "CardDetails",
+           //    url: "catalogue/card-details/{cardId}",
+           //    defaults: new { controller = "Catalogue", action = "CardDetails" }
+           //);
+
+           // routes.MapRoute(
+           //    name: "QuickView",
+           //    url: "catalogue/quick-view/{cardId}",
+           //    defaults: new { controller = "Catalogue", action = "QuickView" }
+           //);
+
+            
 
             routes.MapRoute(
                 name: "Default",

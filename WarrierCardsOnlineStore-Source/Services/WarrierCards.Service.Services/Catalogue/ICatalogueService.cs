@@ -12,10 +12,16 @@ namespace WarrierCards.Service.Services.Catalogue
     public interface ICatalogueService
     {
         [OperationContract]
-        List<CardItem> GetCardsList(SearchCriteria searchCriteria);
+        List<CardBasicInfo> GetCardsList(SearchCriteria searchCriteria);
 
         [OperationContract]
         CardDetails GetCardDetailsById(int cardId);
+
+        [OperationContract]
+        CardQuickViewData GetCardQuickViewData(int cardId);
+
+        [OperationContract]
+        bool SendEnquiry(EnquiryData enquiry);
 
         // Get by list of card IDs- for short list, cart views
 

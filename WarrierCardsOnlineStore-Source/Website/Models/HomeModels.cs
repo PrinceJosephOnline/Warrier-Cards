@@ -10,8 +10,8 @@ namespace WarrierCards.Website.Models
     {
         //public string BestSellers { get; set; }
 
-        public List<CardItem> BestSellers { get; set; }
+        public List<CardBasicInfo> BestSellers { get; set; }
 
-        public List<CardItem> PremiumCards { get; set; }
+        public List<CardBasicInfo> PremiumCards { get; set; }
     }
 }

@@ -14,13 +14,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SearchCriteria" nillable="true" type="tns:SearchCriteria" />
-  <xs:complexType name="ArrayOfCardItem">
+  <xs:complexType name="ArrayOfCardBasicInfo">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="CardItem" nillable="true" type="tns:CardItem" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CardBasicInfo" nillable="true" type="tns:CardBasicInfo" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfCardItem" nillable="true" type="tns:ArrayOfCardItem" />
-  <xs:complexType name="CardItem">
+  <xs:element name="ArrayOfCardBasicInfo" nillable="true" type="tns:ArrayOfCardBasicInfo" />
+  <xs:complexType name="CardBasicInfo">
     <xs:sequence>
       <xs:element minOccurs="0" name="CardId" type="xs:int" />
       <xs:element minOccurs="0" name="CardMainImagePath" nillable="true" type="xs:string" />
@@ -31,10 +31,10 @@
       <xs:element minOccurs="0" name="IsPortrait" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="CardItem" nillable="true" type="tns:CardItem" />
+  <xs:element name="CardBasicInfo" nillable="true" type="tns:CardBasicInfo" />
   <xs:complexType name="CardDetails">
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CardItem">
+      <xs:extension base="tns:CardBasicInfo">
         <xs:sequence>
           <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CardImages" nillable="true" type="q3:ArrayOfstring" />
         </xs:sequence>
@@ -42,4 +42,34 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="CardDetails" nillable="true" type="tns:CardDetails" />
+  <xs:complexType name="CardQuickViewData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CardBasicInfo">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CardImages" nillable="true" type="q4:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CardQuickViewData" nillable="true" type="tns:CardQuickViewData" />
+  <xs:complexType name="EnquiryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardId" type="xs:int" />
+      <xs:element minOccurs="0" name="Query" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserInfo" nillable="true" type="tns:UserData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnquiryData" nillable="true" type="tns:EnquiryData" />
+  <xs:complexType name="UserData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserData" nillable="true" type="tns:UserData" />
 </xs:schema>

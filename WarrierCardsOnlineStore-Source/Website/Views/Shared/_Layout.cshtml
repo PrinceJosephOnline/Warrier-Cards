@@ -43,10 +43,10 @@
             </div>
         </div>
         <div id="menu-bar" style="float:none;clear:both;background: #359ac7;margin:0 auto;text-align: center;padding:8px 0;">
-            <a href="~/Catalogue/Hindu-wedding-cards">Hindu Wedding Cards </a> |
-            <a href="~/Catalogue/Muslim-wedding-cards">Muslim Wedding Cards </a> |           
-            <a href="~/Catalogue/Christian-wedding-cards">Christian Wedding Cards </a> |
-            <a href="~/Catalogue/Christian-wedding-cards">Invitation Cards </a> |
+            <a href="~/catalogue/Hindu-wedding-cards">Hindu Wedding Cards </a> |
+            <a href="~/catalogue/Muslim-wedding-cards">Muslim Wedding Cards </a> |           
+            <a href="~/catalogue/Christian-wedding-cards">Christian Wedding Cards </a> |
+            <a href="~/catalogue/Christian-wedding-cards">Invitation Cards </a> |
             <a href="~/">Design your Card </a> |
             <a href="~/">Sell With Us </a>
         </div>
@@ -68,5 +68,8 @@
 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
+
+    <div id="myModal" class="modal"></div>
+    <div id="divQuickMessage" class="tooltip"></div>
 </body>
 </html>

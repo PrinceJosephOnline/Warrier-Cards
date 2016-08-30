@@ -1,0 +1,16 @@
+﻿@model List<string>
+
+@if (Model == null || Model.Count == 0) { return; }
+
+<section class="gallery">
+    <div class="gallery-main">
+        <img src="@Model[0]" />
+    </div>
+    <div class="align-center thumbnails">
+        <img src="@Model[0]" onclick="BringImageIntoView(this)" class="selected" />
+        @foreach (var image in Model.Skip(1))
+        {
+            <img src="@image" onclick="BringImageIntoView(this)" />            
+        }
+    </div>
+</section>

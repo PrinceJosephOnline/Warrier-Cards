@@ -1,4 +1,4 @@
-﻿@model List<WarrierCards.Website.CatalogueService.CardItem>
+﻿@model List<WarrierCards.Website.CatalogueService.CardBasicInfo>
 
 <section class="catalogue">
 
@@ -23,9 +23,9 @@
                     <span class="selling-price">&#8377;@card.CardSellingPrice</span>
                 </div>
                 <div class="card-actions">
-                    <a href="javascript:void(0)" onclick="OnShortlist(this, @card.CardId);" class="shortlist">Shortlist</a>
-                    <a href="#@card.CardName-Quick-view" class="quick-view">Quick view</a>
-                    <a href="~/catalogue/card-details/@card.CardId" class="view-details">View Details</a>
+                    <a href="javascript:void(0)" onclick="OnShortlist(this);" class="shortlist">Shortlist</a>
+                    <a href="javascript:void(0)" onclick="QuickView(@card.CardId)" class="quick-view">Quick view</a>
+                    <a href="~/card-details/@card.CardId" class="view-details">View Details</a>
                 </div>
             </article>
     }

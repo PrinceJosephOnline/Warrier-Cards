@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace WarrierCards.Service.DataObjects
 {
     [DataContract]
-    public class CardDetails : CardBasicInfo
+    public class CardQuickViewData : CardBasicInfo
     {
         [DataMember]
         public List<string> CardImages { get; set; }

@@ -11,7 +11,7 @@
   <xs:element name="GetCardsListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="GetCardsListResult" nillable="true" type="q2:ArrayOfCardItem" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="GetCardsListResult" nillable="true" type="q2:ArrayOfCardBasicInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -26,6 +26,34 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="GetCardDetailsByIdResult" nillable="true" type="q3:CardDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardQuickViewData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cardId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardQuickViewDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="GetCardQuickViewDataResult" nillable="true" type="q4:CardQuickViewData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEnquiry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="enquiry" nillable="true" type="q5:EnquiryData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEnquiryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendEnquiryResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

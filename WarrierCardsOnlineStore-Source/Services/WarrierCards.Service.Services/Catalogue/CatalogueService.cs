@@ -9,7 +9,7 @@ namespace WarrierCards.Service.Services.Catalogue
 {
     public class CatalogueService : ICatalogueService
     {
-        public List<CardItem> GetCardsList(SearchCriteria searchCriteria)
+        public List<CardBasicInfo> GetCardsList(SearchCriteria searchCriteria)
         {
             // TODO: Dummy method here
             return DummyData.GetDummyData(searchCriteria);
@@ -19,6 +19,16 @@ namespace WarrierCards.Service.Services.Catalogue
         {
 
             return DummyData.GetCardDetailsById(cardId);
+        }
+
+        public CardQuickViewData GetCardQuickViewData(int cardId)
+        {
+            return DummyData.GetCardQuickViewData(cardId);
+        }
+
+        public bool SendEnquiry(EnquiryData enquiry)
+        {
+            return true;
         }
 
         

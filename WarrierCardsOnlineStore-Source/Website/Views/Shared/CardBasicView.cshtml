@@ -1,0 +1,30 @@
+﻿@model  WarrierCards.Website.CatalogueService.CardBasicInfo
+
+<ul class="details-list">
+    <li>Code: @Model.CardModelNumber</li>
+    @if (Model.CardOrginalPrice != Model.CardSellingPrice)
+    {
+        <li>Price: <span class="original-price">&#8377;@Model.CardOrginalPrice</span></li>
+    }
+    <li>Sale: <span class="selling-price">&#8377;@Model.CardSellingPrice</span></li>
+    <li>Shipping: Extra 
+                <a href="#" style="font-size: .8em; text-decoration: underline; color: #0094ff;">Check</a>
+    </li>
+</ul>
+
+<article data-id="@Model.CardId" style="width: 100%;">
+    <div class="align-center">
+        Quantity:
+            <input data-type="quantity" type="text" maxlength="5"
+                 style="width: 50px; height: 14px;font-size: 1em;" value="250" /><br />
+        <input type="button" value="Add to Cart" class="add-to-cart" onclick="OnAddToCart(this)"/><br />
+        <input type="button" value="Buy Now" class="buy-now" onclick="OnBuyNow(this)" /><br />
+    </div>
+
+    <div class="align-center">
+        <input type="button" value="Shortlist" class="shortlist warrier-button" 
+                    onclick="OnShortlist(this)" /><br />
+        <input type="button" value="Buy Sample" class="sample" onclick="OnBuySample(this)" /><br />
+        <input type="button" value="Send Enquiry" class="enquiry" onclick="SendEnquiry(this)" /><br />
+    </div>
+</article>

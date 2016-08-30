@@ -1,0 +1,15 @@
+﻿@model WarrierCards.Website.CatalogueService.CardQuickViewData
+
+<div class="center-panel">
+    <h2>Home &#10093;&#10093; @Model.CardName </h2>
+    <div class="float-left large-pane">
+        @{ 
+            Model.CardImages.Insert(0, Model.CardMainImagePath);
+            Html.RenderPartial("CardGallery", Model.CardImages); 
+        }
+    </div>
+
+    <div class="float-left small-pane warrier-buttons">
+        @{  Html.RenderPartial("CardBasicView", (WarrierCards.Website.CatalogueService.CardBasicInfo)Model);  }
+    </div>
+</div>

@@ -21,6 +21,18 @@
   <wsdl:message name="ICatalogueService_GetCardDetailsById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCardDetailsByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="ICatalogueService_GetCardQuickViewData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardQuickViewData" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogueService_GetCardQuickViewData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardQuickViewDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogueService_SendEnquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEnquiry" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogueService_SendEnquiry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEnquiryResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICatalogueService">
     <wsdl:operation name="GetCardsList">
       <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/GetCardsList" message="tns:ICatalogueService_GetCardsList_InputMessage" />
@@ -29,6 +41,14 @@
     <wsdl:operation name="GetCardDetailsById">
       <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/GetCardDetailsById" message="tns:ICatalogueService_GetCardDetailsById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICatalogueService/GetCardDetailsByIdResponse" message="tns:ICatalogueService_GetCardDetailsById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardQuickViewData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/GetCardQuickViewData" message="tns:ICatalogueService_GetCardQuickViewData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogueService/GetCardQuickViewDataResponse" message="tns:ICatalogueService_GetCardQuickViewData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEnquiry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/SendEnquiry" message="tns:ICatalogueService_SendEnquiry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogueService/SendEnquiryResponse" message="tns:ICatalogueService_SendEnquiry_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICatalogueService" type="tns:ICatalogueService">
@@ -44,6 +64,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetCardDetailsById">
       <soap:operation soapAction="http://tempuri.org/ICatalogueService/GetCardDetailsById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardQuickViewData">
+      <soap:operation soapAction="http://tempuri.org/ICatalogueService/GetCardQuickViewData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEnquiry">
+      <soap:operation soapAction="http://tempuri.org/ICatalogueService/SendEnquiry" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
