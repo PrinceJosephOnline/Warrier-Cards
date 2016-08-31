@@ -1,0 +1,9 @@
+D:\Warrier Cards\Warrier-Cards\WarrierCardsOnlineStore\Bin\WarrierCards.Framework.DAL.dll
+D:\Warrier Cards\Warrier-Cards\WarrierCardsOnlineStore\Bin\WarrierCards.Framework.DAL.pdb
+D:\Warrier Cards\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.DAL\obj\Debug\WarrierCards.Framework.DAL.dll
+D:\Warrier Cards\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.DAL\obj\Debug\WarrierCards.Framework.DAL.pdb
+D:\1\Warrier-Cards\WarrierCardsOnlineStore\Bin\WarrierCards.Framework.DAL.dll
+D:\1\Warrier-Cards\WarrierCardsOnlineStore\Bin\WarrierCards.Framework.DAL.pdb
+D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.DAL\obj\Debug\WarrierCards.Framework.DAL.csprojResolveAssemblyReference.cache
+D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.DAL\obj\Debug\WarrierCards.Framework.DAL.dll
+D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.DAL\obj\Debug\WarrierCards.Framework.DAL.pdb
