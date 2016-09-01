@@ -9,7 +9,7 @@
         }
     </div>
 
-    <div class="float-left small-pane warrier-buttons">
+    <div class="float-left small-pane boxed warrier-buttons">
         @{  Html.RenderPartial("CardBasicView", (WarrierCards.Website.CatalogueService.CardBasicInfo)Model.CardDetails);  }
     </div>
     
@@ -22,7 +22,7 @@
             <br />
             <ul class="details-list">
                 <li>Code: @Model.CardDetails.CardModelNumber</li>
-                <li>Sale: <span class="selling-price">&#8377;@Model.CardDetails.CardSellingPrice</span></li>
+                <li>Sale: <span class="bold">&#8377;@Model.CardDetails.CardSellingPrice</span></li>
                 <li>Width: </li>
                 <li>Height: </li>
                 <li>Weight: </li>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="84a482e6-f081-4bfa-93fa-c71652a51677" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="442d9c95-aaf7-4f1a-87f3-cc882fd923da" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -24,13 +24,13 @@
     <MetadataSource Address="http://localhost:81/ServiceConfigs/CatalogueService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CatalogueService.xsd" MetadataType="Schema" ID="eab49e4d-fb52-4115-9663-e8c048ae03e2" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?xsd=xsd3" />
-    <MetadataFile FileName="CatalogueService1.xsd" MetadataType="Schema" ID="588d3192-89e9-4a11-bb13-a2c81e0348db" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?xsd=xsd4" />
-    <MetadataFile FileName="CatalogueService2.xsd" MetadataType="Schema" ID="384a37e1-36b6-4055-9fdc-f84a8d0e704b" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CatalogueService3.xsd" MetadataType="Schema" ID="2fef3255-f840-46cd-9e18-1524bc131497" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CatalogueService.wsdl" MetadataType="Wsdl" ID="9f34974e-a815-4567-8cec-8069a3b5383d" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?wsdl" />
-    <MetadataFile FileName="CatalogueService4.xsd" MetadataType="Schema" ID="ac4e89bd-b972-4ce8-baf5-8e4c4699a1f9" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?xsd=xsd0" />
-    <MetadataFile FileName="CatalogueService.disco" MetadataType="Disco" ID="70cdcff0-392a-45ba-9e36-7d2cf4d8a2db" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?disco" />
+    <MetadataFile FileName="CatalogueService.xsd" MetadataType="Schema" ID="8f92524c-679f-411a-a7b6-4241ff6cff58" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CatalogueService1.xsd" MetadataType="Schema" ID="b9073587-0e18-40eb-a893-9321b9c279fd" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CatalogueService2.xsd" MetadataType="Schema" ID="399e7ca3-4f80-460e-87f2-9c74579f9c34" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CatalogueService3.xsd" MetadataType="Schema" ID="e8063fc3-454c-4a43-b19a-a69de864176a" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CatalogueService.wsdl" MetadataType="Wsdl" ID="ef4a4cb3-7c94-4b17-86a5-a8f0c52308da" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?wsdl" />
+    <MetadataFile FileName="CatalogueService4.xsd" MetadataType="Schema" ID="e78273cc-206f-4337-8933-12aab7e2822e" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CatalogueService.disco" MetadataType="Disco" ID="80afcd02-fd96-4c02-910d-8db3719eea91" SourceId="1" SourceUrl="http://egenious:81/ServiceConfigs/CatalogueService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

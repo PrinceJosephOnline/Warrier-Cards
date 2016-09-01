@@ -20,10 +20,18 @@ namespace WarrierCards.Website
            );
 
             routes.MapRoute(
-               name: "Card",
+               name: "OrderActivity",
+               url: "my/{action}/",
+               defaults: new { controller = "OrderProcess", action = "view-cart" }
+           );
+
+            routes.MapRoute(
+               name: "CardActivity",
                url: "{action}/{cardId}",
                defaults: new { controller = "Catalogue", action = "Index" }
            );
+
+            
 
            // routes.MapRoute(
            //    name: "CardDetails",

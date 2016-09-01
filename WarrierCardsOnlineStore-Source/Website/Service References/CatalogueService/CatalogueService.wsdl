@@ -27,6 +27,12 @@
   <wsdl:message name="ICatalogueService_GetCardQuickViewData_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCardQuickViewDataResponse" />
   </wsdl:message>
+  <wsdl:message name="ICatalogueService_GetCardsInfoByIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardsInfoByIds" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogueService_GetCardsInfoByIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardsInfoByIdsResponse" />
+  </wsdl:message>
   <wsdl:message name="ICatalogueService_SendEnquiry_InputMessage">
     <wsdl:part name="parameters" element="tns:SendEnquiry" />
   </wsdl:message>
@@ -45,6 +51,10 @@
     <wsdl:operation name="GetCardQuickViewData">
       <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/GetCardQuickViewData" message="tns:ICatalogueService_GetCardQuickViewData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICatalogueService/GetCardQuickViewDataResponse" message="tns:ICatalogueService_GetCardQuickViewData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardsInfoByIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/GetCardsInfoByIds" message="tns:ICatalogueService_GetCardsInfoByIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogueService/GetCardsInfoByIdsResponse" message="tns:ICatalogueService_GetCardsInfoByIds_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SendEnquiry">
       <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/SendEnquiry" message="tns:ICatalogueService_SendEnquiry_InputMessage" />
@@ -73,6 +83,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetCardQuickViewData">
       <soap:operation soapAction="http://tempuri.org/ICatalogueService/GetCardQuickViewData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardsInfoByIds">
+      <soap:operation soapAction="http://tempuri.org/ICatalogueService/GetCardsInfoByIds" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

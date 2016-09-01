@@ -1,0 +1,115 @@
+﻿@model List<WarrierCards.Website.CatalogueService.SelectedCardInfo>
+
+@{
+    ViewBag.Title = "Shopping Cart";
+}
+
+<h2>&#10093;&#10093; Your Shopping Cart</h2>
+@if (Model == null || Model.Count == 0)
+{
+    <div style="min-height: 250px;">
+        <h4>Your cart is empty.</h4>
+    </div>
+    return;
+}
+
+<div class="content-wrapper">
+    <div class="float-left large-pane">
+        <form method="post" action="@Url.Action("view-cart", "my")">
+            @foreach (var card in Model)
+            {
+                <article data-id="@card.Card.CardId" class="boxed cartBox">
+                    <div class="float-left">
+                        <img src="@card.Card.CardMainImagePath" class="imageMedium" />
+                    </div>
+                    <div class="float-left normal-text">
+                        <a href="~/card-details/@card.Card.CardId" class="mainLink">@card.Card.CardName</a>
+                        <p>Code: @card.Card.CardModelNumber</p>
+                        Price: 
+                    @if (@card.Card.CardOrginalPrice != card.Card.CardSellingPrice)
+                    {
+                        <span class="strikedRed">&#8377;@card.Card.CardOrginalPrice</span>
+                    }
+                        &#8377;@card.Card.CardSellingPrice
+                        <br />
+                        Quantity:
+                        <input type="text" data-type="quantity" value="@card.Quantity" class="smaller" />
+                    </div>
+
+                    <div class="float-right">
+                        <input type="submit" value="Remove" class="warrier-button small" onclick="OnRemoveFromCart(this)" />
+                        <br />
+                        <input type="submit" value="Move to Shortlist" class="warrier-button small" onclick="MoveToShortlist(this)" />
+                        <br />
+                        <input type="button" value="Customize" class="warrier-button small" />
+                    </div>
+                    <br class="clear" />
+                </article>
+            }
+        </form>
+
+    </div>
+
+    <div class="float-left small-pane">
+        <div class="boxed clear">
+            <h2>Order Estimate</h2>
+            <div class="wrapper">
+                <span class="semibold-text">Estimated Total: &#8377;@ViewBag.EstimatedTotal
+                    <br />
+                    Shipping cost: &#8377;@ViewBag.ShippingCost
+                    @if (!(ViewBag.ShippingCost is Int32))
+                    { 
+                        <a href="~/card-details/" class="mainLink float-right">Calculate</a>
+                    }
+                </span>
+                <h3>Total: &#8377;@ViewBag.Total</h3>
+
+                <br class="clear" />
+                <div class="align-center">
+                    <input type="button" value="Checkout" class="warrier-button align-center" />
+                </div>
+
+            </div>
+        </div>
+
+        <div class="boxed marginTop">
+            <h2>How to Customize your cards?</h2>
+            <div class="wrapper normal-text">
+                We provide you various options to customize contents to be printed on your card. 
+                Customization includes anything and everything that gets printed on cards and envelops.
+                <p>
+                    You can customize yourself online or directly place your order 
+                   and request a callback for customization assistance. Our experts will get in touch with you in 24 hours.
+                </p>
+                <p>To start customizing yourself, click "Customize" button on the left.</p>
+            </div>
+        </div>
+
+        <div class="boxed marginTop">
+            <h2>How to Track your Order shipment?</h2>
+            <div class="wrapper normal-text">
+               After the order completion, we shall notify you when it is dispatched. 
+               We shall share the tracking details of your order. You can track the progress in 'View Orders' page.
+            </div>
+        </div>
+
+
+
+        <div class="boxed marginTop">
+            <h2>Similar Cards</h2>
+            <div class="wrapper">
+                <span class="semibold-text"></span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@*// TODO : PRINCE
+1. Customize - requires login
+2. Checkout
+3. Calculate Shipping cost
+4. Finding total cost (count*price + shipping) for all cards
+5. Display cost per cart item  (count*price)
+6. Display delivery time
+*@

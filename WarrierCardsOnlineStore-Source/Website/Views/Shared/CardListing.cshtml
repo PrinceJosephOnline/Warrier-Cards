@@ -11,16 +11,16 @@
                     <img src="@card.CardMainImagePath" class="@cardOrientationStyle" />
                 </div>
 
-                <div class="card-name">
+                <div class="card-name" style="display:table-row;">
                     @card.CardName
                 </div>
                 <div class="card-basics">
-                    <span class="card-model">Code: @card.CardModelNumber</span> |
+                    <span class="smallItalic">Code: @card.CardModelNumber</span> |
                     @if (@card.CardOrginalPrice != card.CardSellingPrice)
                     {
-                        <span class="original-price">&#8377;@card.CardOrginalPrice</span>
+                        <span class="strikedRed">&#8377;@card.CardOrginalPrice</span>
                     }
-                    <span class="selling-price">&#8377;@card.CardSellingPrice</span>
+                    <span class="bold">&#8377;@card.CardSellingPrice</span>
                 </div>
                 <div class="card-actions">
                     <a href="javascript:void(0)" onclick="OnShortlist(this);" class="shortlist">Shortlist</a>

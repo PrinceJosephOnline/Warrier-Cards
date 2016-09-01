@@ -26,11 +26,27 @@ namespace WarrierCards.Service.Services.Catalogue
             return DummyData.GetCardQuickViewData(cardId);
         }
 
+        public List<SelectedCardInfo> GetCardsInfoByIds(List<SelectedCard> selectedCards)
+        {
+            List<SelectedCardInfo> selectedCardInfos = new List<SelectedCardInfo>();
+            var selectedCardIds = selectedCards.Select(x => x.CardId);
+            var cardBasicInfos = DummyData.Cards.Where(c => selectedCardIds.Contains(c.CardId)).ToList();
+            foreach (var card in cardBasicInfos)
+            {
+                var cardInfo = new SelectedCardInfo();
+                cardInfo.Card = card;
+                cardInfo.Quantity = selectedCards.Find(c => c.CardId == card.CardId).Quantity;
+                selectedCardInfos.Add(cardInfo);
+            }
+
+            return selectedCardInfos;
+        }
+
         public bool SendEnquiry(EnquiryData enquiry)
         {
             return true;
         }
 
-        
+
     }
 }

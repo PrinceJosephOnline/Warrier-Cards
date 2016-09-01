@@ -52,6 +52,32 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="CardQuickViewData" nillable="true" type="tns:CardQuickViewData" />
+  <xs:complexType name="ArrayOfSelectedCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SelectedCard" nillable="true" type="tns:SelectedCard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSelectedCard" nillable="true" type="tns:ArrayOfSelectedCard" />
+  <xs:complexType name="SelectedCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardId" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SelectedCard" nillable="true" type="tns:SelectedCard" />
+  <xs:complexType name="ArrayOfSelectedCardInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SelectedCardInfo" nillable="true" type="tns:SelectedCardInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSelectedCardInfo" nillable="true" type="tns:ArrayOfSelectedCardInfo" />
+  <xs:complexType name="SelectedCardInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Card" nillable="true" type="tns:CardBasicInfo" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SelectedCardInfo" nillable="true" type="tns:SelectedCardInfo" />
   <xs:complexType name="EnquiryData">
     <xs:sequence>
       <xs:element minOccurs="0" name="CardId" type="xs:int" />

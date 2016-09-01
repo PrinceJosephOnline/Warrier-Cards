@@ -46,12 +46,15 @@ function DisplayShortlistCountAndHighlight() {
     // Find shortlisted articles & tag them yellow 
     $.each(cookieData, function (i, obj) {
         if (obj == null) { return; }
-        var articles = $('article[data-id=' + obj.id + ']');
-        // If an item is listed multiple times (say in multiple sections)
-        $(articles).each(function () {
-            $(this).find('.shortlist').addClass('shortlisted');
-        });
+        $('article[data-id=' + obj.CardId + ']').find('.shortlist').addClass('shortlisted');
     });
+
+    //    var articles = $('article[data-id=' + obj.CardId + ']');
+    //    // If an item is listed multiple times (say in multiple sections)
+    //    $(articles).each(function () {
+    //        $(this).find('.shortlist').addClass('shortlisted');
+    //    });
+    //});
 }
 
 // Display cart item count in header
@@ -73,8 +76,8 @@ function DisplayQuantityFromCart() {
     if ($('article').find('input[data-type="quantity"]') == null) { return; }
     var cookieData = JSON.parse($.cookie('wc_cart'));
     $.each(cookieData, function (i, obj) {
-        var quantityInput = $('article[data-id="' + obj.id + '"]').find('input[data-type="quantity"]')
-        if (quantityInput != null) { $(quantityInput).val(obj.quantity); }
+        var quantityInput = $('article[data-id="' + obj.CardId + '"]').find('input[data-type="quantity"]')
+        if (quantityInput != null) { $(quantityInput).val(obj.Quantity); }
     });
 }
 
@@ -88,15 +91,15 @@ function OnCardSelected(cardId, isShortlist, quantity, action) {
     var cookieData = JSON.parse($.cookie(cookieName));
     // Remove the item if exist
     $.each(cookieData, function (i, obj) {
-        if (obj != null && obj.id == cardId) {
+        if (obj != null && obj.CardId == cardId) {
             cookieData.splice(i, 1);
         }
     });
     // Add it back, for add/update request
     if (action == ActionEnum.add || action == ActionEnum.update) {
         var newItem = {
-            'id': cardId,
-            'quantity': quantity
+            'CardId': cardId,
+            'Quantity': quantity
         };
         cookieData.push(newItem);
     }
@@ -121,8 +124,34 @@ function OnAddToCart(source) {
     QuickMessage(source, '1 item added to cart (Quantity: ' + quantity + ')');
 }
 
-function OnRemoveFromCart(cardId) {
+function OnRemoveFromCart(source) {
+    var cardId = $(source).closest('article').data("id");
+    if (cardId < 0) { alert('Sorry, an error occurred, please try again later'); return; }
     OnCardSelected(cardId, false, 0, ActionEnum.remove);
+}
+
+function OnRemoveFromShortlist(source) {
+    var cardId = $(source).closest('article').data("id");
+    if (cardId < 0) { alert('Sorry, an error occurred, please try again later'); return; }
+    OnCardSelected(cardId, true, 0, ActionEnum.remove);
+}
+
+function MoveToShortlist(source) {
+    var article = $(source).closest('article');
+    var cardId = $(article).data("id");
+    if (cardId < 0) { alert('Sorry, an error occurred, please try again later'); return; }
+    var quantity = $(article).find('input[data-type="quantity"]').val();
+    OnCardSelected(cardId, false, quantity, ActionEnum.remove);
+    OnCardSelected(cardId, true, quantity, ActionEnum.add);
+}
+
+function MoveToCart(source) {
+    var article = $(source).closest('article');
+    var cardId = $(article).data("id");
+    if (cardId < 0) { alert('Sorry, an error occurred, please try again later'); return; }
+    var quantity = $(article).find('input[data-type="quantity"]').val();
+    OnCardSelected(cardId, true, quantity, ActionEnum.remove);
+    OnCardSelected(cardId, false, quantity, ActionEnum.add);
 }
 
 function OnShortlist(source) {

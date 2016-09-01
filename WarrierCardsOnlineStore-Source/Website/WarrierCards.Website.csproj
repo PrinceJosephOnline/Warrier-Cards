@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CatalogueController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderProcessController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -294,13 +295,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -321,6 +315,14 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\CardListing.cshtml" />
     <Content Include="Views\Catalogue\CatalogueView.cshtml" />
+    <Content Include="Views\Catalogue\CardDetails.cshtml" />
+    <Content Include="Views\Shared\CardGallery.cshtml" />
+    <Content Include="Views\Catalogue\QuickView.cshtml" />
+    <Content Include="Views\Shared\CardBasicView.cshtml" />
+    <Content Include="Views\Shared\Enquiry.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\OrderProcess\ViewShortlist.cshtml" />
+    <Content Include="Views\OrderProcess\ViewCart.cshtml" />
     <None Include="Service References\CatalogueService\CatalogueService.wsdl" />
     <None Include="Service References\CatalogueService\CatalogueService.xsd">
       <SubType>Designer</SubType>
@@ -337,21 +339,25 @@
     <None Include="Service References\CatalogueService\CatalogueService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Catalogue\CardDetails.cshtml" />
-    <Content Include="Service References\CatalogueService\WarrierCards.Website.CatalogueService.CardDetails.datasource">
+    <Content Include="Service References\CatalogueService\WarrierCards.Website.CatalogueService.CardBasicInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Views\Shared\CardGallery.cshtml" />
-    <Content Include="Views\Catalogue\QuickView.cshtml" />
-    <Content Include="Views\Shared\CardBasicView.cshtml" />
-    <Content Include="Service References\CatalogueService\WarrierCards.Website.CatalogueService.CardBasicInfo.datasource">
+    <Content Include="Service References\CatalogueService\WarrierCards.Website.CatalogueService.CardDetails.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\CatalogueService\WarrierCards.Website.CatalogueService.CardQuickViewData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Views\Shared\Enquiry.cshtml" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Web.config" />
+    <Content Include="Service References\CatalogueService\WarrierCards.Website.CatalogueService.SelectedCardInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

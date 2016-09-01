@@ -59,7 +59,7 @@ namespace WarrierCards.Website.Controllers
         [ActionName("send-enquiry")]
         public bool SendEnquiry(UserInfoModel userInfo)
         {
-            EnquiryData enquiry = new EnquiryData();            
+            EnquiryData enquiry = new EnquiryData();
             var userId = Convert.ToInt32(Request.RequestContext.HttpContext.Session["UserID"]);
             if (userId == 0)
             {
@@ -78,5 +78,7 @@ namespace WarrierCards.Website.Controllers
 
             return result;
         }
+
+        
     }
 }

@@ -43,10 +43,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCardsInfoByIds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="selectedCards" nillable="true" type="q5:ArrayOfSelectedCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardsInfoByIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="GetCardsInfoByIdsResult" nillable="true" type="q6:ArrayOfSelectedCardInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SendEnquiry">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="enquiry" nillable="true" type="q5:EnquiryData" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="enquiry" nillable="true" type="q7:EnquiryData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

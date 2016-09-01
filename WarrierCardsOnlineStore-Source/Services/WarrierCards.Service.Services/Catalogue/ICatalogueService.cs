@@ -21,6 +21,9 @@ namespace WarrierCards.Service.Services.Catalogue
         CardQuickViewData GetCardQuickViewData(int cardId);
 
         [OperationContract]
+        List<SelectedCardInfo> GetCardsInfoByIds(List<SelectedCard> selectedCards);
+
+        [OperationContract]
         bool SendEnquiry(EnquiryData enquiry);
 
         // Get by list of card IDs- for short list, cart views

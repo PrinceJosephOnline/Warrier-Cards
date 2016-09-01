@@ -75,7 +75,7 @@ namespace WarrierCards.Service.Services.Catalogue
 
         private static string site = "http://localhost:81/Card-Images/";
 
-        static List<CardBasicInfo> Cards = new List<CardBasicInfo>() 
+        public static List<CardBasicInfo> Cards = new List<CardBasicInfo>() 
         { 
             new CardBasicInfo() { CardId = 1, CardModelNumber = "Card0", CardName ="Ethnic cards for Hindu wedding" , CardOrginalPrice = 20, CardSellingPrice = 20,
                              CardMainImagePath= site + "1.jpg", IsPortrait = false},
