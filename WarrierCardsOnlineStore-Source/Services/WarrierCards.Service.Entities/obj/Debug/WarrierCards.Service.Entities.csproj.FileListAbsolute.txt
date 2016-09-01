@@ -1,0 +1,5 @@
+D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\WarrierCards.Service.Entities\bin\Debug\WarrierCards.Service.Entities.dll
+D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\WarrierCards.Service.Entities\bin\Debug\WarrierCards.Service.Entities.pdb
+D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\WarrierCards.Service.Entities\obj\Debug\WarrierCards.Service.Entities.csprojResolveAssemblyReference.cache
+D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\WarrierCards.Service.Entities\obj\Debug\WarrierCards.Service.Entities.dll
+D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\WarrierCards.Service.Entities\obj\Debug\WarrierCards.Service.Entities.pdb
