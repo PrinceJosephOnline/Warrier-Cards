@@ -45,3 +45,11 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+#Ignore this folders - Prince_09022016
+*.suo
+*.user
+bin
+obj
+packages
