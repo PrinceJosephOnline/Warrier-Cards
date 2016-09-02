@@ -3,3 +3,7 @@ D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\WarrierCards.Service.Entities\
 D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\WarrierCards.Service.Entities\obj\Debug\WarrierCards.Service.Entities.csprojResolveAssemblyReference.cache
 D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\WarrierCards.Service.Entities\obj\Debug\WarrierCards.Service.Entities.dll
 D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\WarrierCards.Service.Entities\obj\Debug\WarrierCards.Service.Entities.pdb
+G:\Warrier-Cards\WarrierCardsOnlineStore\Bin\WarrierCards.Service.Entities.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore\Bin\WarrierCards.Service.Entities.pdb
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Service.Entities\obj\Debug\WarrierCards.Service.Entities.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Service.Entities\obj\Debug\WarrierCards.Service.Entities.pdb

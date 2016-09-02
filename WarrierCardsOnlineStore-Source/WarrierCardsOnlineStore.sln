@@ -4,6 +4,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarrierCards.Service.Services", "Services\WarrierCards.Service.Services\WarrierCards.Service.Services.csproj", "{BEE21A5D-23CA-4A3C-B3A7-07E109B63A63}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EB914C90-6A14-47AA-ABD3-7FE9DD334450} = {EB914C90-6A14-47AA-ABD3-7FE9DD334450}
+		{B92C0AC5-B02D-4612-8EFD-73F6F1BAAB1D} = {B92C0AC5-B02D-4612-8EFD-73F6F1BAAB1D}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarrierCards.Service.DataObjects", "Services\WarrierCards.Service.DataObjects\WarrierCards.Service.DataObjects.csproj", "{EB914C90-6A14-47AA-ABD3-7FE9DD334450}"
@@ -16,6 +17,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarrierCards.Framework.DAL", "Services\WarrierCards.Framework.DAL\WarrierCards.Framework.DAL.csproj", "{23287B9F-E2CD-4189-85BE-676D21D4714C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarrierCards.Framework.EF", "Services\WarrierCards.Framework.EF\WarrierCards.Framework.EF.csproj", "{B92C0AC5-B02D-4612-8EFD-73F6F1BAAB1D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ABAB496C-FE7D-4A49-AFF0-F780C3C37ECC} = {ABAB496C-FE7D-4A49-AFF0-F780C3C37ECC}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarrierCards.Framework.Logger", "Services\WarrierCards.Framework.Logger\WarrierCards.Framework.Logger.csproj", "{BA8399C5-FC42-4ECB-90D1-2719E36DEBC7}"
 EndProject

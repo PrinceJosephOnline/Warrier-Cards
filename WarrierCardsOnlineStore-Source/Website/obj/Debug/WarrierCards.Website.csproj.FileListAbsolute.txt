@@ -52,6 +52,5 @@ G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\System.Web.WebPages.
 G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\WebMatrix.Data.xml
 G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\Microsoft.Web.WebPages.OAuth.xml
 G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\bin\WebMatrix.WebData.xml
-G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\obj\Debug\WarrierCards.Website.csprojResolveAssemblyReference.cache
 G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\obj\Debug\WarrierCards.Website.dll
 G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Website\obj\Debug\WarrierCards.Website.pdb

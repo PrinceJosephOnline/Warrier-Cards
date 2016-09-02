@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using Microsoft.SqlServer.Server;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WarrierCards.Framework.EF
 {

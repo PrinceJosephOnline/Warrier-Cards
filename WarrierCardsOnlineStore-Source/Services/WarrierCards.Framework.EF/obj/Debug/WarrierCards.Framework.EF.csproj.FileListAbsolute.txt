@@ -16,3 +16,10 @@ D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framewor
 D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.EF\obj\Debug\WarrierCards.Framework.EF.csproj.GenerateResource.Cache
 D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.EF\obj\Debug\WarrierCards.Framework.EF.dll
 D:\1\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.EF\obj\Debug\WarrierCards.Framework.EF.pdb
+G:\Warrier-Cards\WarrierCardsOnlineStore\Bin\WarrierCards.Framework.EF.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore\Bin\WarrierCards.Framework.EF.pdb
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.EF\obj\Debug\WarrierCards.Framework.EF.csprojResolveAssemblyReference.cache
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.EF\obj\Debug\WarrierCards.Framework.EF.Messages.resources
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.EF\obj\Debug\WarrierCards.Framework.EF.csproj.GenerateResource.Cache
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.EF\obj\Debug\WarrierCards.Framework.EF.dll
+G:\Warrier-Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Framework.EF\obj\Debug\WarrierCards.Framework.EF.pdb
