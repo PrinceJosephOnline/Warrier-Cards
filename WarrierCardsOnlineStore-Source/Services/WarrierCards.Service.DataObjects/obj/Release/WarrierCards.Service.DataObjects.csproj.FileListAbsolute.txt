@@ -1,4 +1,0 @@
-G:\Warrier Cards\WarrierCardsOnlineStore\Bin\WarrierCards.Service.DataObjects.dll
-G:\Warrier Cards\WarrierCardsOnlineStore\Bin\WarrierCards.Service.DataObjects.pdb
-G:\Warrier Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Service.DataObjects\obj\Release\WarrierCards.Service.DataObjects.dll
-G:\Warrier Cards\WarrierCardsOnlineStore-Source\Services\WarrierCards.Service.DataObjects\obj\Release\WarrierCards.Service.DataObjects.pdb
