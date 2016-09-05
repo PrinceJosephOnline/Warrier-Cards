@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Warriers.Framework.Logger")]
+[assembly: AssemblyTitle("WarrierCards.Framework.Utilities")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Warriers Technologies Inc.")]
-[assembly: AssemblyProduct("Warriers.Framework.Logger")]
+[assembly: AssemblyProduct("WarrierCards.Framework.Utilities")]
 [assembly: AssemblyCopyright("Copyright 2012 Warriers Technologies Inc. All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

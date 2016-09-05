@@ -6,7 +6,7 @@ using System.Text;
 using System.Configuration;
 using System.Collections.Specialized;
 
-namespace Warriers.Framework
+namespace WarrierCards.Framework.Utilities
 {
     /// <summary>
     /// This singleton class wraps the RMS the logger

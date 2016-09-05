@@ -8,8 +8,8 @@
     <ProjectGuid>{BA8399C5-FC42-4ECB-90D1-2719E36DEBC7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WarrierCards.Framework.Logger</RootNamespace>
-    <AssemblyName>WarrierCards.Framework.Logger</AssemblyName>
+    <RootNamespace>WarrierCards.Framework.Utilities</RootNamespace>
+    <AssemblyName>WarrierCards.Framework.Utilities</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
