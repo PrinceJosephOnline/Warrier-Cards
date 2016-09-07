@@ -57,29 +57,34 @@ namespace WarrierCards.Website.Common
             private set { HttpContext.Current.Session["Username"] = value; }
         }
 
-        internal static bool Login(string email, string password, bool rememberMe)
+        internal static bool Login(string email, string password, bool? rememberMe)
         {
             LoginInfo login = new LoginInfo();
             login.Email = email;
             login.Password = password;
-            ISecurityService securityService = new SecurityServiceClient();
-            UserId = securityService.CheckLogin(login);
-            SetAuthCookie();
-            if (rememberMe)
+            using (var securityService = new SecurityServiceClient())
             {
-                HttpCookie cookie = new HttpCookie("WarrierCardsLogin");
-                cookie.Expires = DateTime.Now.AddMonths(1);
-                cookie.Values["Email"] = email;
-                cookie.Values["Password"] = Encrypt(password);
-                HttpContext.Current.Response.Cookies.Add(cookie);
+                UserId = securityService.CheckLogin(login);
             }
-            else
+            if (UserId > 0)
             {
-                // TODO
-                // Delete cookie if exists
-                // HttpContext.Current.Response.Cookies["WarrierCardsLogin"]
-                //myCookie.Expires = DateTime.Now.AddDays(-1d);
-                //HttpContext.Current.Response.Cookies.Add(myCookie);
+                SetAuthCookie();
+                if (Convert.ToBoolean(rememberMe))
+                {
+                    HttpCookie cookie = new HttpCookie("WarrierCardsLogin");
+                    cookie.Expires = DateTime.Now.AddMonths(1);
+                    cookie.Values["Email"] = email;
+                    cookie.Values["Password"] = Encrypt(password);
+                    HttpContext.Current.Response.Cookies.Add(cookie);
+                }
+                else if (rememberMe != null)
+                {
+                    // TODO
+                    // Delete cookie if exists
+                    // HttpContext.Current.Response.Cookies["WarrierCardsLogin"]
+                    //myCookie.Expires = DateTime.Now.AddDays(-1d);
+                    //HttpContext.Current.Response.Cookies.Add(myCookie);
+                }
             }
 
             return true;
@@ -95,9 +100,10 @@ namespace WarrierCards.Website.Common
 
         internal static bool Register(UserInfo userInfo)
         {
-            ISecurityService securityService = new SecurityServiceClient();
-            securityService.Register(userInfo);
-
+            using (var securityService = new SecurityServiceClient())
+            {
+                securityService.Register(userInfo);
+            }
             Login(userInfo.Email, userInfo.Password, false);
 
             return true;

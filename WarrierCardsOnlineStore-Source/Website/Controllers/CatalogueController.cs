@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WarrierCards.Website.CatalogueService;
+using WarrierCards.Website.Common;
 using WarrierCards.Website.Models;
 
 namespace WarrierCards.Website.Controllers
@@ -18,8 +19,10 @@ namespace WarrierCards.Website.Controllers
             ViewBag.Title = string.IsNullOrEmpty(criteria.Keywords) ? " - View all our Cards" : "- " + criteria.Keywords;
 
             CatalogueModel model = new CatalogueModel();
-            ICatalogueService catalogueService = new CatalogueServiceClient();
-            model.CardsCollection = catalogueService.GetCardsList(criteria);
+            using (var catalogueService = new CatalogueServiceClient())
+            {
+                model.CardsCollection = catalogueService.GetCardsList(criteria);
+            }
             model.Criteria = criteria;
 
             return View("CatalogueView", model);
@@ -29,17 +32,21 @@ namespace WarrierCards.Website.Controllers
         public ActionResult CardDetails(int cardId)
         {
             CardDetailsModel model = new CardDetailsModel();
-            ICatalogueService catalogueService = new CatalogueServiceClient();
-            model.CardDetails = catalogueService.GetCardDetailsById(cardId);
-
+            using (var catalogueService = new CatalogueServiceClient())
+            {
+                model.CardDetails = catalogueService.GetCardDetailsById(cardId);
+            }
             return View("CardDetails", model);
         }
 
         [ActionName("quick-view")]
         public PartialViewResult QuickView(int cardId)
         {
-            ICatalogueService catalogueService = new CatalogueServiceClient();
-            var model = catalogueService.GetCardQuickViewData(cardId);
+            CardQuickViewData model = null;
+            using (var catalogueService = new CatalogueServiceClient())
+            {
+                model = catalogueService.GetCardQuickViewData(cardId);
+            }
 
             return PartialView("QuickView", model);
         }
@@ -48,37 +55,28 @@ namespace WarrierCards.Website.Controllers
         [ActionName("send-enquiry")]
         public PartialViewResult ShowEnquiryForm(int cardId)
         {
-            var model = new UserInfoModel();
-            model.UserId = Convert.ToInt32(Request.RequestContext.HttpContext.Session["UserID"]);
-            ViewBag.CardId = cardId;
+            var model = new EnquiryData();
+            model.UserId = CustomWebSecurity.UserId;
+            model.CardId = cardId;
 
-            return PartialView("Enquiry", model);
+            return PartialView("_Enquiry", model);
         }
 
         [HttpPost]
         [ActionName("send-enquiry")]
-        public bool SendEnquiry(UserInfoModel userInfo)
+        public bool SendEnquiry(EnquiryData enquiryData)
         {
-            EnquiryData enquiry = new EnquiryData();
-            var userId = Convert.ToInt32(Request.RequestContext.HttpContext.Session["UserID"]);
-            if (userId == 0)
+            enquiryData.UserId = CustomWebSecurity.UserId;
+            enquiryData.Fullname = CustomWebSecurity.Username;
+            bool sent = false;
+            using (var catalogueService = new CatalogueServiceClient())
             {
-                enquiry.UserInfo = new UserData();
-                enquiry.UserInfo.FirstName = userInfo.FirstName;
-                enquiry.UserInfo.LastName = userInfo.LastName;
-                enquiry.UserInfo.Email = userInfo.Email;
-                enquiry.UserInfo.CountryCode = userInfo.CountryCode;
-                enquiry.UserInfo.Phone = userInfo.Phone;
+                sent = catalogueService.SendEnquiry(enquiryData);
             }
-            enquiry.CardId = Convert.ToInt32(Request["CardId"]);
-            enquiry.Query = Request["Enquiry"];
 
-            ICatalogueService catalogueService = new CatalogueServiceClient();
-            var result = catalogueService.SendEnquiry(enquiry);
-
-            return result;
+            return sent;
         }
 
-        
+
     }
 }

@@ -30,13 +30,12 @@ body {
     width: 80%;
     display: table;
     margin: 0px auto;
+    padding: 1em;
 }
 
 .large-pane {
     width: 60%;
     padding: 1em;
-    display: table;
-    border: 1px solid #dedede;
     margin-left: 4px;
 }
 
@@ -44,6 +43,7 @@ body {
     width: 30%;
     min-width: 240px;
     margin-left: 1em;
+    padding: 0 1em 1em 1em;
 }
 
 .cartBox {
@@ -84,21 +84,26 @@ body {
     font-size: 11px;
 }
 
-.bold {
+.highlight {
     font-weight: 500;
+    text-decoration: underline;
 }
 
 .smallItalic {
     font: italic 10px Verdana;
 }
 
-.normal-text {
+.normalText {
     font: normal 12px Arial;
     line-height: 16px;
 }
 
-.semibold-text {
+.semiboldTtext {
     font: 500 12px Arial;
+}
+
+.bold {
+    font-weight: 500;
 }
 
 /* FORM ELEMENTS */
@@ -139,12 +144,15 @@ input[type="button"].shortlist {
 
 input.small {
     width: 180px;
-    height: 28px;
 }
 
-.smaller {
+input.smaller {
+    width: 80px;
+    height: 30px;
+    vertical-align: top;
+}
+input[type="text"].smaller {
     width: 30px;
-    height: 12px;
 }
 
 /* ANCHOR */
@@ -280,6 +288,10 @@ h1 {
 h2 {
     font: normal 1.5em Arial;
 }
+    h2.pageHeader {
+        padding-left:25px;
+        background: url('../Images/pointer.png') no-repeat left center;
+    }
 
 h3 {
     font-size: 1.2em;
@@ -915,7 +927,7 @@ aside {
     font-weight: 700;
 }
 
-/* login page */
+/*/* login page 
 #loginForm {
     border-right: solid 2px #c8c8c8;
     float: left;
@@ -965,7 +977,7 @@ aside {
 
 #logoutForm {
     display: inline;
-}
+}*/
 
 /* contact */
 .contact h3 {
@@ -1029,13 +1041,17 @@ input, textarea {
     font-size: 1.2em;
     margin: 5px 0 6px 0;
     padding: 5px;
-    width: 300px;
+    width:80%;
 }
 
-textarea {
+    input[type="radio"] {
+        width: 16px;
+    }
+
+/*textarea {
     font-family: inherit;
     width: 500px;
-}
+}*/
 
     input:focus, textarea:focus {
         border: 1px solid #7ac0da;
@@ -1356,7 +1372,7 @@ tr.pager td {
 
     .small-pane {
         width: 100%;
-        min-width: 250px;
+        min-width: 240px;
         padding: 0;
         margin-left: 0px;
         margin-top: 10px;

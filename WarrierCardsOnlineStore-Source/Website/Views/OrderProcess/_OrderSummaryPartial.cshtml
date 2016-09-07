@@ -1,0 +1,44 @@
+﻿@{
+    @model WarrierCards.Website.CatalogueService.OrderSummary
+    Layout = string.Empty;
+}
+
+<div class="boxed clear marginTop">
+    <h2>Order Summary</h2>
+    <div class="wrapper">
+        <table>
+            <tr>
+                <td>Estimated Total</td>
+                <td>: &#8377;@Model.EstimatedTotal</td>
+            </tr>
+            <tr>
+                <td>Shipping Charge (@Model.ShippingWeight Kg)</td>
+                <td>: &#8377;@Model.ShippingCost</td>
+            </tr>
+            @if (Model.CouponDiscount > 0)
+            {
+                <tr>
+                    <td>Coupon Discount (@Model.CouponCode)</td>
+                    <td>: &#8377;@Model.CouponDiscount</td>
+                </tr>
+            }
+            <tr>
+                <td class="bold">Total</td>
+                <td class="bold">: &#8377;@Model.Total</td>
+            </tr>
+        </table>
+
+        <br />
+        @if (@Model.TotalSavings > 0)
+        {
+            <div class="error" style="text-align:center;">Your Total savings: &#8377; @Model.TotalSavings</div>
+        }
+       
+        <div class="full-width" style="margin: 20px 0 0px 0;">
+            <input type="button" value="Place Order & Pay" class="warrier-button center-panel" />
+        </div>
+
+         <span id="ErrorData" style="display: none;">@Model.CouponError</span>
+
+    </div>
+</div>

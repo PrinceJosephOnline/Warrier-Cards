@@ -19,18 +19,6 @@
   <wsdl:message name="ISecurityService_Register_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegisterResponse" />
   </wsdl:message>
-  <wsdl:message name="ISecurityService_GetShippingAddressesByUserId_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetShippingAddressesByUserId" />
-  </wsdl:message>
-  <wsdl:message name="ISecurityService_GetShippingAddressesByUserId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetShippingAddressesByUserIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="ISecurityService_SaveShippingAddress_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveShippingAddress" />
-  </wsdl:message>
-  <wsdl:message name="ISecurityService_SaveShippingAddress_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveShippingAddressResponse" />
-  </wsdl:message>
   <wsdl:message name="ISecurityService_SendPasswordResetEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:SendPasswordResetEmail" />
   </wsdl:message>
@@ -58,14 +46,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/Register" message="tns:ISecurityService_Register_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/RegisterResponse" message="tns:ISecurityService_Register_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetShippingAddressesByUserId">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/GetShippingAddressesByUserId" message="tns:ISecurityService_GetShippingAddressesByUserId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/GetShippingAddressesByUserIdResponse" message="tns:ISecurityService_GetShippingAddressesByUserId_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveShippingAddress">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/SaveShippingAddress" message="tns:ISecurityService_SaveShippingAddress_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/SaveShippingAddressResponse" message="tns:ISecurityService_SaveShippingAddress_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="SendPasswordResetEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/SendPasswordResetEmail" message="tns:ISecurityService_SendPasswordResetEmail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/SendPasswordResetEmailResponse" message="tns:ISecurityService_SendPasswordResetEmail_OutputMessage" />
@@ -92,24 +72,6 @@
     </wsdl:operation>
     <wsdl:operation name="Register">
       <soap:operation soapAction="http://tempuri.org/ISecurityService/Register" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetShippingAddressesByUserId">
-      <soap:operation soapAction="http://tempuri.org/ISecurityService/GetShippingAddressesByUserId" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveShippingAddress">
-      <soap:operation soapAction="http://tempuri.org/ISecurityService/SaveShippingAddress" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -26,9 +26,24 @@ namespace WarrierCards.Service.Services.Catalogue
         [OperationContract]
         bool SendEnquiry(EnquiryData enquiry);
 
-        // Get by list of card IDs- for short list, cart views
+        [OperationContract]
+        List<ShippingAddress> GetShippingAddressesByUserId(int userId);
+
+        [OperationContract]
+        int SaveShippingAddress(int userId, ShippingAddress address);
+
+        [OperationContract]
+        ShippingAddress GetShippingAddressById(int userId, int shippingId);
+
+        [OperationContract]
+        OrderSummary GetOrderSummary(int userId, OrderSummaryParams args);
 
         // Add to short list
         // Add to cart
+
+
+        //  TODO:
+        // Provide list of countries that we support (Clients can use dropdown)
+        // Provide list of states in India that we support. (Clients must not use dropdowns, but suggestions can be provided, state can be of any country)
     }
 }

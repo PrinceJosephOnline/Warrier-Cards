@@ -49,9 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Catalogue\DummyData.cs" />
+    <Compile Include="Catalogue\DummyOrderSummaryCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Catalogue\ICatalogueService.cs" />
     <Compile Include="Catalogue\CatalogueService.cs" />
+    <Compile Include="Security\ISecurityService.cs" />
+    <Compile Include="Security\SecurityService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

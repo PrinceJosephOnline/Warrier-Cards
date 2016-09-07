@@ -28,6 +28,7 @@
       <xs:element minOccurs="0" name="CardName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CardOrginalPrice" type="xs:decimal" />
       <xs:element minOccurs="0" name="CardSellingPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CardWeight" type="xs:double" />
       <xs:element minOccurs="0" name="IsPortrait" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
@@ -81,21 +82,53 @@
   <xs:complexType name="EnquiryData">
     <xs:sequence>
       <xs:element minOccurs="0" name="CardId" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fullname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Query" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="UserInfo" nillable="true" type="tns:UserData" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="EnquiryData" nillable="true" type="tns:EnquiryData" />
-  <xs:complexType name="UserData">
+  <xs:complexType name="ArrayOfShippingAddress">
     <xs:sequence>
-      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShippingAddress" nillable="true" type="tns:ShippingAddress" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="UserData" nillable="true" type="tns:UserData" />
+  <xs:element name="ArrayOfShippingAddress" nillable="true" type="tns:ArrayOfShippingAddress" />
+  <xs:complexType name="ShippingAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressId" type="xs:int" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Landmark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pincode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecipientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShippingAddress" nillable="true" type="tns:ShippingAddress" />
+  <xs:complexType name="OrderSummaryParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SelectedCards" nillable="true" type="tns:ArrayOfSelectedCard" />
+      <xs:element minOccurs="0" name="ShippingAddressId" type="xs:int" />
+      <xs:element minOccurs="0" name="couponCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderSummaryParams" nillable="true" type="tns:OrderSummaryParams" />
+  <xs:complexType name="OrderSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CouponCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CouponDiscount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CouponError" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstimatedTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ShippingCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ShippingWeight" type="xs:double" />
+      <xs:element minOccurs="0" name="Total" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalSavings" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderSummary" nillable="true" type="tns:OrderSummary" />
 </xs:schema>

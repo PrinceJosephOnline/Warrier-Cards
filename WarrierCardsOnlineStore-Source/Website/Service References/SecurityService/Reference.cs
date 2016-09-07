@@ -162,147 +162,6 @@ namespace WarrierCards.Website.SecurityService {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ShippingAddress", Namespace="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects.Account")]
-    [System.SerializableAttribute()]
-    public partial class ShippingAddress : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int AddressIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CountryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FullAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LandmarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MobileField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PincodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AddressId {
-            get {
-                return this.AddressIdField;
-            }
-            set {
-                if ((this.AddressIdField.Equals(value) != true)) {
-                    this.AddressIdField = value;
-                    this.RaisePropertyChanged("AddressId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Country {
-            get {
-                return this.CountryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CountryField, value) != true)) {
-                    this.CountryField = value;
-                    this.RaisePropertyChanged("Country");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FullAddress {
-            get {
-                return this.FullAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FullAddressField, value) != true)) {
-                    this.FullAddressField = value;
-                    this.RaisePropertyChanged("FullAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Landmark {
-            get {
-                return this.LandmarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LandmarkField, value) != true)) {
-                    this.LandmarkField = value;
-                    this.RaisePropertyChanged("Landmark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Mobile {
-            get {
-                return this.MobileField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MobileField, value) != true)) {
-                    this.MobileField = value;
-                    this.RaisePropertyChanged("Mobile");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Pincode {
-            get {
-                return this.PincodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PincodeField, value) != true)) {
-                    this.PincodeField = value;
-                    this.RaisePropertyChanged("Pincode");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SecurityService.ISecurityService")]
     public interface ISecurityService {
@@ -318,18 +177,6 @@ namespace WarrierCards.Website.SecurityService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/Register", ReplyAction="http://tempuri.org/ISecurityService/RegisterResponse")]
         System.Threading.Tasks.Task<int> RegisterAsync(WarrierCards.Website.SecurityService.UserInfo userInfo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetShippingAddressesByUserId", ReplyAction="http://tempuri.org/ISecurityService/GetShippingAddressesByUserIdResponse")]
-        System.Collections.Generic.List<WarrierCards.Website.SecurityService.ShippingAddress> GetShippingAddressesByUserId(int userId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetShippingAddressesByUserId", ReplyAction="http://tempuri.org/ISecurityService/GetShippingAddressesByUserIdResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<WarrierCards.Website.SecurityService.ShippingAddress>> GetShippingAddressesByUserIdAsync(int userId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/SaveShippingAddress", ReplyAction="http://tempuri.org/ISecurityService/SaveShippingAddressResponse")]
-        bool SaveShippingAddress(WarrierCards.Website.SecurityService.ShippingAddress address);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/SaveShippingAddress", ReplyAction="http://tempuri.org/ISecurityService/SaveShippingAddressResponse")]
-        System.Threading.Tasks.Task<bool> SaveShippingAddressAsync(WarrierCards.Website.SecurityService.ShippingAddress address);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/SendPasswordResetEmail", ReplyAction="http://tempuri.org/ISecurityService/SendPasswordResetEmailResponse")]
         bool SendPasswordResetEmail(string email);
@@ -391,22 +238,6 @@ namespace WarrierCards.Website.SecurityService {
         
         public System.Threading.Tasks.Task<int> RegisterAsync(WarrierCards.Website.SecurityService.UserInfo userInfo) {
             return base.Channel.RegisterAsync(userInfo);
-        }
-        
-        public System.Collections.Generic.List<WarrierCards.Website.SecurityService.ShippingAddress> GetShippingAddressesByUserId(int userId) {
-            return base.Channel.GetShippingAddressesByUserId(userId);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<WarrierCards.Website.SecurityService.ShippingAddress>> GetShippingAddressesByUserIdAsync(int userId) {
-            return base.Channel.GetShippingAddressesByUserIdAsync(userId);
-        }
-        
-        public bool SaveShippingAddress(WarrierCards.Website.SecurityService.ShippingAddress address) {
-            return base.Channel.SaveShippingAddress(address);
-        }
-        
-        public System.Threading.Tasks.Task<bool> SaveShippingAddressAsync(WarrierCards.Website.SecurityService.ShippingAddress address) {
-            return base.Channel.SaveShippingAddressAsync(address);
         }
         
         public bool SendPasswordResetEmail(string email) {

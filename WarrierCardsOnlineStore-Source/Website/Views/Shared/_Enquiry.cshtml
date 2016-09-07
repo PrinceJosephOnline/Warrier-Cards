@@ -1,0 +1,69 @@
+﻿@model WarrierCards.Website.CatalogueService.EnquiryData
+
+@*@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Styles.Render("~/Content/css")*@
+
+@using (Html.BeginForm())
+{
+    //Html.EnableClientValidation(true);
+    
+    <div class="warrier-user">
+        @Html.Hidden("CardId", (string)Model.CardId.ToString())
+
+        @if (Model.UserId == 0)
+        {
+            // Get email & phone if user is not logged in
+            <div class="editor-field">
+                Email:
+                @Html.TextBoxFor(m => m.Email)
+            </div>
+
+            <div class="editor-field">
+                <div>Phone:</div>
+                @Html.TextBoxFor(m => m.CountryCode, new { maxlength = "3", @style = "width:10%;" })
+                @Html.TextBoxFor(m => m.Phone, new { maxlength = "10", @style = "width: 84%;" })
+            </div>
+        }
+
+        <div class="editor-field">
+            <div>Enquiry:</div>
+            @Html.TextAreaFor(m => m.Query, new { rows = "3", @style = "width: 100%;" })
+            @*<textarea name="Enquiry" style="vertical-align: top; width: 100%; min-height: 80px;"></textarea>*@
+        </div>
+
+        <div class="editor-field warrier-buttons">
+            <input type="button" value="Send" class="send small" onclick="OnSendEnquiry(this.form);" />
+        </div>
+        <br class="clear" />
+    </div>
+    // TODO: display Login link in the popup is user is not logged in.
+    // After login , user must be taken back to the enquiry popup
+}
+
+@section scripts {
+    <script>
+        function OnSendEnquiry(formNode) {
+            // TODO: implement this JS method
+            // TASK 1 of 3: Validate the controls - may be just highlight the elements with error.
+            // TASK 2 of 3:Submit the form using the following code
+            /*$.ajax({
+                type: "POST",
+                url: formNode.action,
+                data: $(formNode).serialize(),
+                cache: false,
+                dataType: 'html',
+                success: function (data) {
+                    // Do something here
+                },
+                error: function () {
+                    $('#divOrderSummary').html('<span class="error">An error occurred. please refresh the page.<br />' + result);
+                }
+            });*/
+
+            // TASK 3 of 3 - Close the popup
+            // May be show a message near to 'Send Enquiry' button. use the following code
+            // QuickMessage(sourceButton on main page, "Enquiry is sent successfully");
+        }
+    </script>
+}

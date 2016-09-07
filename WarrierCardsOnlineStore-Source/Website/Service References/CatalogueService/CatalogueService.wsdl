@@ -39,6 +39,30 @@
   <wsdl:message name="ICatalogueService_SendEnquiry_OutputMessage">
     <wsdl:part name="parameters" element="tns:SendEnquiryResponse" />
   </wsdl:message>
+  <wsdl:message name="ICatalogueService_GetShippingAddressesByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShippingAddressesByUserId" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogueService_GetShippingAddressesByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShippingAddressesByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogueService_SaveShippingAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveShippingAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogueService_SaveShippingAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveShippingAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogueService_GetShippingAddressById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShippingAddressById" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogueService_GetShippingAddressById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShippingAddressByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogueService_GetOrderSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderSummary" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogueService_GetOrderSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderSummaryResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICatalogueService">
     <wsdl:operation name="GetCardsList">
       <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/GetCardsList" message="tns:ICatalogueService_GetCardsList_InputMessage" />
@@ -59,6 +83,22 @@
     <wsdl:operation name="SendEnquiry">
       <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/SendEnquiry" message="tns:ICatalogueService_SendEnquiry_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICatalogueService/SendEnquiryResponse" message="tns:ICatalogueService_SendEnquiry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingAddressesByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/GetShippingAddressesByUserId" message="tns:ICatalogueService_GetShippingAddressesByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogueService/GetShippingAddressesByUserIdResponse" message="tns:ICatalogueService_GetShippingAddressesByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveShippingAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/SaveShippingAddress" message="tns:ICatalogueService_SaveShippingAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogueService/SaveShippingAddressResponse" message="tns:ICatalogueService_SaveShippingAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingAddressById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/GetShippingAddressById" message="tns:ICatalogueService_GetShippingAddressById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogueService/GetShippingAddressByIdResponse" message="tns:ICatalogueService_GetShippingAddressById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogueService/GetOrderSummary" message="tns:ICatalogueService_GetOrderSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogueService/GetOrderSummaryResponse" message="tns:ICatalogueService_GetOrderSummary_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICatalogueService" type="tns:ICatalogueService">
@@ -101,6 +141,42 @@
     </wsdl:operation>
     <wsdl:operation name="SendEnquiry">
       <soap:operation soapAction="http://tempuri.org/ICatalogueService/SendEnquiry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingAddressesByUserId">
+      <soap:operation soapAction="http://tempuri.org/ICatalogueService/GetShippingAddressesByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveShippingAddress">
+      <soap:operation soapAction="http://tempuri.org/ICatalogueService/SaveShippingAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingAddressById">
+      <soap:operation soapAction="http://tempuri.org/ICatalogueService/GetShippingAddressById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderSummary">
+      <soap:operation soapAction="http://tempuri.org/ICatalogueService/GetOrderSummary" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -4,7 +4,7 @@
     ViewBag.Title = "Shopping Cart";
 }
 
-<h2>&#10093;&#10093; Your Shopping Cart</h2>
+<h2 class="pageHeader">Your Shopping Cart</h2>
 @if (Model == null || Model.Count == 0)
 {
     <div style="min-height: 250px;">
@@ -14,7 +14,7 @@
 }
 
 <div class="content-wrapper">
-    <div class="float-left large-pane">
+    <div class="float-left large-pane boxed">
         <form method="post" action="@Url.Action("view-cart", "my")">
             @foreach (var card in Model)
             {
@@ -22,8 +22,8 @@
                     <div class="float-left">
                         <img src="@card.Card.CardMainImagePath" class="imageMedium" />
                     </div>
-                    <div class="float-left normal-text">
-                        <a href="~/card-details/@card.Card.CardId" class="mainLink">@card.Card.CardName</a>
+                    <div class="float-left normalText">
+                        <a href="~/catalogue/card-details/@card.Card.CardId" class="mainLink">@card.Card.CardName</a>
                         <p>Code: @card.Card.CardModelNumber</p>
                         Price: 
                     @if (@card.Card.CardOrginalPrice != card.Card.CardSellingPrice)
@@ -47,26 +47,25 @@
                 </article>
             }
         </form>
-
     </div>
 
     <div class="float-left small-pane">
         <div class="boxed clear">
             <h2>Order Estimate</h2>
             <div class="wrapper">
-                <span class="semibold-text">Estimated Total: &#8377;@ViewBag.EstimatedTotal
+                <span class="semiboldTtext">Estimated Total: &#8377;@ViewBag.EstimatedTotal
                     <br />
                     Shipping cost: &#8377;@ViewBag.ShippingCost
                     @if (!(ViewBag.ShippingCost is Int32))
                     { 
-                        <a href="~/card-details/" class="mainLink float-right">Calculate</a>
+                        <a href="#" class="mainLink float-right">Calculate</a>
                     }
                 </span>
                 <h3>Total: &#8377;@ViewBag.Total</h3>
 
                 <br class="clear" />
                 <div class="align-center">
-                    <input type="button" value="Checkout" class="warrier-button align-center" />
+                    <input type="button" value="Checkout" class="warrier-button align-center" onclick="OnCheckout(this);" />
                 </div>
 
             </div>
@@ -74,7 +73,7 @@
 
         <div class="boxed marginTop">
             <h2>How to Customize your cards?</h2>
-            <div class="wrapper normal-text">
+            <div class="wrapper normalText">
                 We provide you various options to customize contents to be printed on your card. 
                 Customization includes anything and everything that gets printed on cards and envelops.
                 <p>
@@ -87,7 +86,7 @@
 
         <div class="boxed marginTop">
             <h2>How to Track your Order shipment?</h2>
-            <div class="wrapper normal-text">
+            <div class="wrapper normalText">
                After the order completion, we shall notify you when it is dispatched. 
                We shall share the tracking details of your order. You can track the progress in 'View Orders' page.
             </div>
@@ -98,7 +97,7 @@
         <div class="boxed marginTop">
             <h2>Similar Cards</h2>
             <div class="wrapper">
-                <span class="semibold-text"></span>
+                <span class="semiboldTtext"></span>
             </div>
         </div>
 

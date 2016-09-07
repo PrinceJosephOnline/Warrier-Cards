@@ -23,7 +23,7 @@ using System.Globalization;
 using System.Linq;
 using WarrierCards.Framework.DAL;
 using WarrierCards.Framework.DAL.Specification;
-using Warriers.Framework;
+using WarrierCards.Framework.Utilities;
 
 namespace WarrierCards.Framework.EF
 {
@@ -105,7 +105,7 @@ namespace WarrierCards.Framework.EF
             DbSet<TEntity> dataSet = null;
             try
             {
-               dataSet = this.DataContext.Set<TEntity>();                
+                dataSet = this.DataContext.Set<TEntity>();
             }
             catch (DataException ex)
             {
@@ -133,7 +133,7 @@ namespace WarrierCards.Framework.EF
             if (specification.Predicate == null)
             {
                 Logger.Instance().Log(methodName, Messages.MissingPredicate, Logger.LogLevel.Warnings);
-                throw new Exception(Messages.MissingPredicate);              
+                throw new Exception(Messages.MissingPredicate);
             }
 
             try
@@ -147,7 +147,7 @@ namespace WarrierCards.Framework.EF
             catch (DataException ex)
             {
                 Logger.Instance().Log(methodName, ex);
-                throw ex;                
+                throw ex;
             }
 
             Logger.Instance().Log(methodName, "Method Exited", Logger.LogLevel.Info);
@@ -242,7 +242,7 @@ namespace WarrierCards.Framework.EF
         /// </summary>
         /// <typeparam name="TEntity">Entity type</typeparam>
         /// <param name="entity">Entity instance</param>
-        public override void Update<TEntity>(TEntity entity) 
+        public override void Update<TEntity>(TEntity entity)
         {
             string methodName = "EFRepository::Update";
             Logger.Instance().Log(methodName, "Method Entered", Logger.LogLevel.Info);

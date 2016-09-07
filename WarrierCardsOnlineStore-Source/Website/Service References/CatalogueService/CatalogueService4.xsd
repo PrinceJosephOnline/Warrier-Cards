@@ -71,4 +71,63 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetShippingAddressesByUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShippingAddressesByUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="GetShippingAddressesByUserIdResult" nillable="true" type="q8:ArrayOfShippingAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveShippingAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="address" nillable="true" type="q9:ShippingAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveShippingAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveShippingAddressResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShippingAddressById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="shippingId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShippingAddressByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="GetShippingAddressByIdResult" nillable="true" type="q10:ShippingAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderSummary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="args" nillable="true" type="q11:OrderSummaryParams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderSummaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects" minOccurs="0" name="GetOrderSummaryResult" nillable="true" type="q12:OrderSummary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

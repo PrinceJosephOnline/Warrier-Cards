@@ -3,10 +3,10 @@
     ViewBag.Title = "Shortlist";
 }
 
-<h2>Your Shortlisted Cards</h2>
+<h2 class="pageHeader">Your Shortlisted Cards</h2>
 
 <div class="content-wrapper">
-    <div class="float-left large-pane">
+    <div class="float-left large-pane boxed">
         @if (Model == null || Model.Count == 0)
         {
             <div style="min-height: 250px;">
@@ -20,8 +20,8 @@
                     <div class="float-left">
                         <img src="@card.Card.CardMainImagePath" class="imageMedium" />
                     </div>
-                    <div class="float-left normal-text">
-                        <a href="~/card-details/@card.Card.CardId" class="mainLink">@card.Card.CardName</a>
+                    <div class="float-left normalText">
+                        <a href="~/catalogue/card-details/@card.Card.CardId" class="mainLink">@card.Card.CardName</a>
                         <p>Code: @card.Card.CardModelNumber</p>
                         Price: 
                     @if (@card.Card.CardOrginalPrice != card.Card.CardSellingPrice)
@@ -51,7 +51,7 @@
             <div class="boxed">
                 <h2>Similar Cards</h2>
                 <div class="wrapper">
-                    <span class="semibold-text"></span>
+                    <span class="semiboldTtext"></span>
                 </div>
             </div>
         }
@@ -59,7 +59,7 @@
         {
             <div class="boxed">
                 <h2>How/Why to create Shortlists?</h2>
-                <div class="wrapper normal-text">
+                <div class="wrapper normalText">
                     You can create 'Shortlist' by clicking the 'Shortlist' buttons or links
                     displayed along with a card listing.
 
@@ -72,7 +72,7 @@
 
         <div class="boxed marginTop">
             <h2>How to buy?</h2>
-            <div class="wrapper normal-text">
+            <div class="wrapper normalText">
                 Purchase your card in few easy steps.
                 <ol>
                     <li>Login / Register</li>
@@ -87,7 +87,7 @@
 
         <div class="boxed marginTop">
             <h2>Customization/Proofing/Delivery</h2>
-            <div class="wrapper normal-text">
+            <div class="wrapper normalText">
                 We provide you various options to customize contents to be printed your card. 
                 Customization includes anything and everything that gets printed on cards and envelops.
                 <ul>

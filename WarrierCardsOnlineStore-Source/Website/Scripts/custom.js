@@ -86,7 +86,7 @@ function OnCardSelected(cardId, isShortlist, quantity, action) {
     if (typeof (quantity) === 'undefined') { quantity = 250; }
     var cookieName = isShortlist ? 'wc_shortlist' : 'wc_cart';
     if ($.cookie(cookieName) == null) {
-        $.cookie(cookieName, '[]', { expires: 20, path: '/' });
+        SaveCookie(cookieName, '[]');
     }
     var cookieData = JSON.parse($.cookie(cookieName));
     // Remove the item if exist
@@ -104,7 +104,7 @@ function OnCardSelected(cardId, isShortlist, quantity, action) {
         cookieData.push(newItem);
     }
 
-    $.cookie(cookieName, JSON.stringify(cookieData), { path: '/' });
+    SaveCookie(cookieName, cookieData);
     // update the count display in header
     var value = cookieData.length > 0 ? cookieData.length : '';
     if (isShortlist) {
@@ -113,6 +113,11 @@ function OnCardSelected(cardId, isShortlist, quantity, action) {
     } else {
         DisplayCartCount(value);
     }
+}
+
+function SaveCookie(cookieName, cookieValue) {
+    if (typeof cookieValue == 'object') { cookieValue = JSON.stringify(cookieValue); }
+    $.cookie(cookieName, cookieValue, { expires: 20, path: '/' });
 }
 
 function OnAddToCart(source) {
@@ -187,7 +192,7 @@ function BringImageIntoView(img) {
 
 function QuickView(cardId) {
     $.ajax({
-        url: 'http://' + window.location.host + "/quick-view/" + cardId,
+        url: 'http://' + window.location.host + "/catalogue/quick-view/" + cardId,
         success: function (result) {
             ShowDialog(result);
         }
@@ -211,7 +216,12 @@ function ShowDialog(data) {
     '</div>';
     $('#myModal').html(content);
     $('#myModal').css('display', 'block');
-    $('.modal-content').width($('.modal-main div:first-child').width());
+
+    // HACK: to show small popup area for small content
+    var contentWidth = $('.modal-main div:first').width();
+    if (contentWidth < 800) {
+        $('.modal-content').width(contentWidth);
+    }
 }
 
 function Close() {
@@ -229,12 +239,11 @@ function OnBuyNow(source) {
     window.location.href = 'http://' + window.location.host; // TODO: PRINCE - Go To Cart
 }
 
-function SendEnquiry(source)
-{
+function ShowEnquiryForm(source) {
     var cardId = $(source).closest('article').data("id");
     if (cardId < 0) { alert('Sorry, an error occurred, please try again later'); return; }
     $.ajax({
-        url: 'http://' + window.location.host + "/send-enquiry/" + cardId,
+        url: 'http://' + window.location.host + "/catalogue/send-enquiry/" + cardId,
         success: function (result) {
             ShowDialog(result);
         },
@@ -242,4 +251,34 @@ function SendEnquiry(source)
             alert(result);
         }
     });
+}
+
+function CheckUncheckByLabel(source) {
+    var chkBox = $(source).siblings('input[type="checkbox"]').first();
+    var isChecked = $(chkBox).prop('checked');
+    $(chkBox).prop('checked', !isChecked);
+}
+
+// Set form action corresponding to the source element
+function SetAction(source, url) {
+    source.form.action = url;
+}
+
+function OnCheckout(source) {
+    if ($.cookie('wc_cart') == null || $.cookie('wc_cart') == '[]') {
+        QuickMessage(source, "No items in cart");
+    } else {
+        window.location.href = "/my/shipping-address";
+    }
+}
+
+function OnContinueCheckout(source) {
+    var isAddressSelected = $("input:radio[name=rdoShipping]").is(":checked");
+    if (!isAddressSelected) {
+        QuickMessage(source, "Please select a shipping address");
+        return false;
+    }
+    return true;
+
+    //SetAction(source, '');
 }

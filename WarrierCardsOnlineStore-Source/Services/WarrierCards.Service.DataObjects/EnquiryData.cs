@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using WarrierCards.Service.DataObjects.Account;
 
 namespace WarrierCards.Service.DataObjects
 {
@@ -17,23 +18,25 @@ namespace WarrierCards.Service.DataObjects
         public int CardId { get; set; }
 
         [DataMember]
-        public string Query { get; set; }
+        public string Fullname { get; set; }
 
         [DataMember]
-        public UserData UserInfo { get; set; }
+        public string Email { get; set; }
+
+        [DataMember]
+        public string CountryCode { get; set; }
+
+        [DataMember]
+        public string Phone { get; set; }
+
+        [DataMember]
+        public string Query { get; set; }
 
         public bool Validate()
         {
-            if (UserId < 1)
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Phone))
             {
-                if (this.UserInfo == null)
-                {
-                    throw new Exception("User information is missing");
-                }
-                else
-                {
-                    this.UserInfo.Validate();
-                }
+                throw new Exception("Email and Phone number are mandatory");
             }
 
             if (CardId < 1)
@@ -49,4 +52,31 @@ namespace WarrierCards.Service.DataObjects
             return true;
         }
     }
+
+    //[DataContract]
+    //public class UserInfoTemp // TODO:PRINCE - solve this, temp solution for Ambigious reference
+    //{
+    //    [DataMember]
+    //    public string Email { get; set; }
+
+    //    [DataMember]
+    //    public int UserId { get; set; }
+
+    //    [DataMember]
+    //    public string FirstName { get; set; }
+
+    //    [DataMember]
+    //    public string LastName { get; set; }
+
+    //    [DataMember]
+    //    public string CountryCode { get; set; }
+
+    //    [DataMember]
+    //    public string Phone { get; set; }
+
+    //    public bool Validate()
+    //    {
+    //        return true;
+    //    }
+    //}
 }

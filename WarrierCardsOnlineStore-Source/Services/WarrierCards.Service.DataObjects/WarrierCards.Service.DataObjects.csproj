@@ -43,10 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrderSummary.cs" />
+    <Compile Include="OrderSummaryParams.cs" />
+    <Compile Include="ShippingAddress.cs" />
+    <Compile Include="Account\UserInfo.cs" />
     <Compile Include="CardDetails.cs" />
     <Compile Include="CardBasicInfo.cs" />
     <Compile Include="CardQuickViewData.cs" />
     <Compile Include="Common\Constants.cs" />
+    <Compile Include="Account\LoginInfo.cs" />
     <Compile Include="EnquiryData.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -54,8 +59,8 @@
     <Compile Include="SearchCriteria.cs" />
     <Compile Include="SelectedCard.cs" />
     <Compile Include="SelectedCardInfo.cs" />
-    <Compile Include="UserData.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

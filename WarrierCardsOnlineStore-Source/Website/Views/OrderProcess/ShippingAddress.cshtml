@@ -1,0 +1,105 @@
+﻿@{
+    @model WarrierCards.Website.CatalogueService.ShippingAddress
+    ViewBag.Title = "Shipping Address";
+}
+
+<h2 class="pageHeader">Your Shipping Address</h2>
+<div class="content-wrapper">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="float-left large-pane boxed">
+            @{ var saved = ViewBag.SavedShippingAddresses as ICollection<WarrierCards.Website.CatalogueService.ShippingAddress>; }
+            @if (saved != null && saved.Count() > 0)
+            {
+                <h4>Select a Shipping Address</h4>
+                foreach (WarrierCards.Website.CatalogueService.ShippingAddress address in ViewBag.SavedShippingAddresses)
+                {
+                <div class="boxed cartBox">
+                    <a href="~/my/shipping-address/@address.AddressId#Edit" class="mainLink float-right">Edit</a>
+
+                    <input type="radio" name="rdoShipping" value="@address.AddressId" />
+                    <span class="semibold">@address.RecipientName</span>
+                    <span class="normalText">
+                        @address.FullAddress<br />
+                        @address.Country, Pin -  @address.Pincode<br />
+                    </span>
+                    <p>
+                        Mobile:  @address.Mobile
+                        <br />
+                        Landmark:  @address.Landmark
+                    </p>
+                </div>
+                }
+                
+                <div class="float-right">
+                    <input name="UseExistingAddress" type="submit" value="Continue To Checkout" 
+                        onclick="return OnContinueCheckout(this);" class="warrier-button small" />
+                </div>
+            }
+
+            <div id="Edit" class="float-left full-width">
+                <h4 class="marginTop">Add New Shipping Address</h4>
+                <div class="cartBox boxed">
+
+                    @Html.ValidationSummary(true)
+
+                    <div class="editor-field">
+                        Fullname:<br />
+                        @Html.TextBoxFor(m => m.RecipientName)
+                    </div>
+
+                    <div class="editor-field">
+                        Address:<br />
+                        @Html.TextAreaFor(m => m.FullAddress, new { rows = "4" })
+                    </div>
+
+                    <div class="editor-field">
+                        Country:<br />
+                        @Html.TextBoxFor(m => m.Country)
+                    </div>
+
+                    <div class="editor-field">
+                        Pincode:<br />
+                        @Html.TextBoxFor(m => m.Pincode, new { @class = "small" })
+                    </div>
+
+                    <br />
+                    <div class="editor-field">
+                        Mobile:<br />
+                        @Html.TextBox("CountryCode", null, new { maxlength = "3", @Value = "91", @style = "width:50px;" })
+                        @Html.TextBoxFor(m => m.Mobile, new { maxlength = "10", @class = "small" })
+                    </div>
+
+                    <div class="editor-field">
+                        Landmark:<br />
+                        @Html.TextBox("Landmark")
+                    </div>
+
+                    <div class="editor-field marginTop float-right">
+                        <input type="submit" value="Save & Continue" class="warrier-button small" />
+                    </div>
+                    <br class="clear" />
+
+                </div>
+            </div>
+        </div>
+    }
+    <div class="float-left small-pane">
+        <div class="boxed clear">
+            <h2>Shipping Address</h2>
+            <div class="wrapper">
+                @* TODO: PRINCE: add some relevant content here, or make the page as full*@
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts {
+    <script>
+
+
+    </script>
+}

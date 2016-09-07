@@ -75,7 +75,7 @@
 
 <h4 class="content-header">Best Sellers</h4>
 <div class="data-wrapper">
-    @Html.Partial("CardListing", Model.BestSellers)
+    @Html.Partial("_CardsGrid", Model.BestSellers)
 </div>
 
 <br class="clear" />
@@ -84,7 +84,7 @@
 
 <h4 class="content-header">Premium Cards</h4>
 <div class="data-wrapper">
-    @Html.Partial("CardListing", Model.PremiumCards)
+    @Html.Partial("_CardsGrid", Model.PremiumCards)
 </div>
 
 @section scripts {

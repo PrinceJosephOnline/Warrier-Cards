@@ -1,0 +1,108 @@
+﻿@{
+    @model WarrierCards.Website.Models.ReviewOrderModel
+    ViewBag.Title = "Review Your Order";
+}
+
+<h2 class="pageHeader">Your Shipping Address</h2>
+<div class="content-wrapper">
+    <div class="float-left large-pane">
+
+        <div class="boxed clear">
+            <h2>Shipping Details</h2>
+            <div class="wrapper">
+                @{ var address = Model.ShippingAddress; }
+                <p class="bold">@address.RecipientName</p>
+                <span class="normalText">
+                    @address.FullAddress<br />
+                    @address.Country, Pin -  @address.Pincode<br />
+                </span>
+                <p>
+                    Mobile:  @address.Mobile
+                    <br />
+                    Landmark:  @address.Landmark
+                </p>
+            </div>
+        </div>
+
+        <div class="boxed clear marginTop">
+            <h2>Selected Cards</h2>
+            <div class="wrapper">
+                @{ var selectedCards = Model.SelectedCards; }
+                @foreach (var card in selectedCards)
+                {
+                    <article data-id="@card.Card.CardId" class="boxed cartBox">
+                        <div class="float-left">
+                            <img src="@card.Card.CardMainImagePath" class="imageMedium" />
+                        </div>
+                        <div class="float-left normalText">
+                            <a href="~/catalogue/card-details/@card.Card.CardId" class="mainLink">@card.Card.CardName</a>
+                            <p>Code: @card.Card.CardModelNumber</p>
+                            Price: 
+                            @if (@card.Card.CardOrginalPrice != card.Card.CardSellingPrice)
+                            {
+                                <span class="strikedRed">&#8377;@card.Card.CardOrginalPrice</span>
+                            }
+                            &#8377;@card.Card.CardSellingPrice
+                            <br />
+                            Quantity: @card.Quantity
+                        </div>
+                        <br class="clear" />
+                    </article>
+                    <br class="clear" />
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="float-left small-pane">
+        <div class="full-width" id="divOrderSummary">
+            @{ Html.RenderAction("order-summary", "OrderProcess"); }
+        </div>
+
+        <div class="boxed clear marginTop">
+            <h2>Coupons & Offers</h2>
+            <div class="wrapper center-panel">
+                @using (Html.BeginForm("order-summary", "my"))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="marginTop">Apply Coupon:</div>
+                    <input type="text" class="small" name="Coupon" />
+                    <input type="button" value="Apply" class="warrier-button smaller" onclick="OnApplyCoupon(this.form);" />
+                    <div style="height: 16px; padding-left: 10px;">
+                        <span class="error normalText" id="divError"></span>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section scripts {
+    <script>
+        function OnApplyCoupon(formNode) {
+            $.ajax({
+                type: "GET",
+                url: formNode.action,
+                data: $(formNode).serialize(),
+                cache: false,
+                dataType: 'html',
+                success: function (data) {
+                    var couponError = $(data).find('#ErrorData').html();
+                    if (couponError != '') {
+                        $('#divError').css('display', 'block');
+                        $('#divError').html(couponError);
+                        $('#divError').delay(1500).fadeOut('slow');
+                    } else {
+                        $('#divOrderSummary').html(data);
+                        formNode.reset();
+                    }
+                },
+                error: function () {
+                    $('#divOrderSummary').html('<span class="error">An error occurred. please refresh the page.<br />' + result);
+                }
+            });
+        }
+    </script>
+}

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceModel;
 using WarrierCards.Service.DataObjects.Account;
 
 namespace WarrierCards.Service.Services.Security
@@ -16,12 +11,6 @@ namespace WarrierCards.Service.Services.Security
 
         [OperationContract]
         int Register(UserInfo userInfo);
-
-        [OperationContract]
-        List<ShippingAddress> GetShippingAddressesByUserId(int userId);
-
-        [OperationContract]
-        bool SaveShippingAddress(ShippingAddress address);
 
         [OperationContract]
         bool SendPasswordResetEmail(string email);

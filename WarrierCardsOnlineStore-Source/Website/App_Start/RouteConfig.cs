@@ -14,6 +14,12 @@ namespace WarrierCards.Website
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+              name: "CardActivity",
+              url: "catalogue/{action}/{cardId}",
+              defaults: new { controller = "Catalogue", action = "Index" }
+          );
+
+            routes.MapRoute(
                name: "Catalogue",
                url: "catalogue/{keywords}",
                defaults: new { controller = "Catalogue", action = "Index" }
@@ -21,38 +27,16 @@ namespace WarrierCards.Website
 
             routes.MapRoute(
                name: "OrderActivity",
-               url: "my/{action}/",
-               defaults: new { controller = "OrderProcess", action = "view-cart" }
+               url: "my/{action}/{id}",
+               defaults: new { controller = "OrderProcess", action = "view-cart", id = UrlParameter.Optional }
            );
-
-            routes.MapRoute(
-               name: "CardActivity",
-               url: "{action}/{cardId}",
-               defaults: new { controller = "Catalogue", action = "Index" }
-           );
-
-            
-
-           // routes.MapRoute(
-           //    name: "CardDetails",
-           //    url: "catalogue/card-details/{cardId}",
-           //    defaults: new { controller = "Catalogue", action = "CardDetails" }
-           //);
-
-           // routes.MapRoute(
-           //    name: "QuickView",
-           //    url: "catalogue/quick-view/{cardId}",
-           //    defaults: new { controller = "Catalogue", action = "QuickView" }
-           //);
-
-            
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-            
+
         }
     }
 }

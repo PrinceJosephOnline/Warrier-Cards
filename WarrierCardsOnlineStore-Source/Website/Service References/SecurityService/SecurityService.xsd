@@ -21,22 +21,4 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
-  <xs:complexType name="ArrayOfShippingAddress">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShippingAddress" nillable="true" type="tns:ShippingAddress" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfShippingAddress" nillable="true" type="tns:ArrayOfShippingAddress" />
-  <xs:complexType name="ShippingAddress">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AddressId" type="xs:int" />
-      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FullAddress" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Landmark" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Pincode" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ShippingAddress" nillable="true" type="tns:ShippingAddress" />
 </xs:schema>

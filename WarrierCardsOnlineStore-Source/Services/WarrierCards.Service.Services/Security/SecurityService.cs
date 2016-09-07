@@ -11,7 +11,7 @@ namespace WarrierCards.Service.Services.Security
     {
         public int CheckLogin(LoginInfo loginInfo)
         {
-            return 0;
+            return 1;
         }
 
         public int Register(UserInfo userInfo)
@@ -19,18 +19,7 @@ namespace WarrierCards.Service.Services.Security
             // Register
             // Send welcome email to user
             return 0;
-        }
-
-        public List<ShippingAddress> GetShippingAddressesByUserId(int userId)
-        {
-            return null;
-        }
-
-        public bool SaveShippingAddress(ShippingAddress address)
-        {
-
-            return true;
-        }
+        }        
 
         public bool SendPasswordResetEmail(string email)
         {

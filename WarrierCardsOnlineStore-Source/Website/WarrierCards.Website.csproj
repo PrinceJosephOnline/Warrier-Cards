@@ -165,23 +165,27 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Common\CustomWebSecurity.cs" />
     <Compile Include="Common\ExtensionMethods.cs" />
     <Compile Include="Common\Utility.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CatalogueController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderProcessController.cs" />
-    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\CardDetailsModel.cs" />
     <Compile Include="Models\CatalogueModel.cs" />
     <Compile Include="Models\HomeModels.cs" />
-    <Compile Include="Models\UserInfoModel.cs" />
+    <Compile Include="Models\ReviewOrderModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\CatalogueService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SecurityService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -254,6 +258,7 @@
     <Content Include="Images\easy.png" />
     <Content Include="Images\enquiry.png" />
     <Content Include="Images\Go.gif" />
+    <Content Include="Images\pointer.png" />
     <Content Include="Images\quick-view.png" />
     <Content Include="Images\sample.png" />
     <Content Include="Images\search.png" />
@@ -297,29 +302,33 @@
     </None>
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Service References\CatalogueService\WarrierCards.Website.CatalogueService.ShippingAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CatalogueService\WarrierCards.Website.CatalogueService.OrderSummary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\SecurityService\SecurityService.disco" />
+    <None Include="Service References\SecurityService\configuration91.svcinfo" />
+    <None Include="Service References\SecurityService\configuration.svcinfo" />
+    <None Include="Service References\SecurityService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\CardListing.cshtml" />
+    <Content Include="Views\Shared\_CardsGrid.cshtml" />
     <Content Include="Views\Catalogue\CatalogueView.cshtml" />
     <Content Include="Views\Catalogue\CardDetails.cshtml" />
-    <Content Include="Views\Shared\CardGallery.cshtml" />
+    <Content Include="Views\Catalogue\_CardGallery.cshtml" />
     <Content Include="Views\Catalogue\QuickView.cshtml" />
-    <Content Include="Views\Shared\CardBasicView.cshtml" />
-    <Content Include="Views\Shared\Enquiry.cshtml" />
+    <Content Include="Views\Catalogue\_CardBasicInfo.cshtml" />
+    <Content Include="Views\Shared\_Enquiry.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\OrderProcess\ViewShortlist.cshtml" />
     <Content Include="Views\OrderProcess\ViewCart.cshtml" />
@@ -352,6 +361,21 @@
     <Content Include="Service References\CatalogueService\WarrierCards.Website.CatalogueService.SelectedCardInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Views\Account\Login.cshtml" />
+    <None Include="Service References\SecurityService\SecurityService.wsdl" />
+    <None Include="Service References\SecurityService\SecurityService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityService\SecurityService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecurityService\SecurityService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\OrderProcess\ShippingAddress.cshtml" />
+    <Content Include="Views\OrderProcess\ReviewOrder.cshtml" />
+    <Content Include="Views\OrderProcess\_OrderSummaryPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -361,6 +385,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -370,6 +395,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CatalogueService\" />
+    <WCFMetadataStorage Include="Service References\SecurityService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -21,9 +21,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarrierCards.Framework.EF",
 		{ABAB496C-FE7D-4A49-AFF0-F780C3C37ECC} = {ABAB496C-FE7D-4A49-AFF0-F780C3C37ECC}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarrierCards.Framework.Logger", "Services\WarrierCards.Framework.Logger\WarrierCards.Framework.Logger.csproj", "{BA8399C5-FC42-4ECB-90D1-2719E36DEBC7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarrierCards.Service.Entities", "Services\WarrierCards.Service.Entities\WarrierCards.Service.Entities.csproj", "{ABAB496C-FE7D-4A49-AFF0-F780C3C37ECC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarrierCards.Framework.Utilities", "Services\WarrierCards.Framework.Utilities\WarrierCards.Framework.Utilities.csproj", "{BA8399C5-FC42-4ECB-90D1-2719E36DEBC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,14 +51,14 @@ Global
 		{B92C0AC5-B02D-4612-8EFD-73F6F1BAAB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B92C0AC5-B02D-4612-8EFD-73F6F1BAAB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B92C0AC5-B02D-4612-8EFD-73F6F1BAAB1D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA8399C5-FC42-4ECB-90D1-2719E36DEBC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA8399C5-FC42-4ECB-90D1-2719E36DEBC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA8399C5-FC42-4ECB-90D1-2719E36DEBC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA8399C5-FC42-4ECB-90D1-2719E36DEBC7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ABAB496C-FE7D-4A49-AFF0-F780C3C37ECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ABAB496C-FE7D-4A49-AFF0-F780C3C37ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABAB496C-FE7D-4A49-AFF0-F780C3C37ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABAB496C-FE7D-4A49-AFF0-F780C3C37ECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA8399C5-FC42-4ECB-90D1-2719E36DEBC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA8399C5-FC42-4ECB-90D1-2719E36DEBC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA8399C5-FC42-4ECB-90D1-2719E36DEBC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA8399C5-FC42-4ECB-90D1-2719E36DEBC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

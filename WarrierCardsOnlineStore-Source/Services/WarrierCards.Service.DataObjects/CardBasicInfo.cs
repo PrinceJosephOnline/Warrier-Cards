@@ -30,5 +30,8 @@ namespace WarrierCards.Service.DataObjects
 
         [DataMember]
         public bool IsPortrait { get; set; }
+
+        [DataMember]
+        public double CardWeight { get; set; }
     }
 }

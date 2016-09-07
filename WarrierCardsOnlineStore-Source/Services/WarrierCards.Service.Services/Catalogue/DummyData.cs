@@ -78,22 +78,22 @@ namespace WarrierCards.Service.Services.Catalogue
         public static List<CardBasicInfo> Cards = new List<CardBasicInfo>() 
         { 
             new CardBasicInfo() { CardId = 1, CardModelNumber = "Card0", CardName ="Ethnic cards for Hindu wedding" , CardOrginalPrice = 20, CardSellingPrice = 20,
-                             CardMainImagePath= site + "1.jpg", IsPortrait = false},
+                             CardMainImagePath= site + "1.jpg", IsPortrait = false, CardWeight = 10},
 
             new CardBasicInfo() { CardId = 2, CardModelNumber = "Card1", CardName ="Red and Cream Mix" , CardOrginalPrice = 21, CardSellingPrice = 21,
-                            CardMainImagePath= site + "2.jpg", IsPortrait = false},
+                            CardMainImagePath= site + "2.jpg", IsPortrait = false, CardWeight = 11},
 
             new CardBasicInfo() { CardId = 3, CardModelNumber = "Card2", CardName ="Ethnic cards Excellency" , CardOrginalPrice = 21, CardSellingPrice = 21,
-                CardMainImagePath= site + "3.jpg", IsPortrait = true},
+                CardMainImagePath= site + "3.jpg", IsPortrait = true, CardWeight = 15},
 
             new CardBasicInfo() { CardId = 4, CardModelNumber = "MX012", CardName ="PeaCock Design" , CardOrginalPrice = 15, CardSellingPrice = 14,
-                CardMainImagePath= site + "4.jpg", IsPortrait = true},
+                CardMainImagePath= site + "4.jpg", IsPortrait = true, CardWeight = 9.5},
 
             new CardBasicInfo() { CardId = 5, CardModelNumber = "MX013", CardName ="Sample wedding card 1" , CardOrginalPrice = 100, CardSellingPrice = 99,
-                CardMainImagePath= site + "5.jpg", IsPortrait = true},
+                CardMainImagePath= site + "5.jpg", IsPortrait = true, CardWeight = 8},
 
             new CardBasicInfo() { CardId = 6, CardModelNumber = "MX014", CardName ="Sample wedding card 2" , CardOrginalPrice = 100, CardSellingPrice = 99,
-                CardMainImagePath= site + "6.jpg", IsPortrait = true},
+                CardMainImagePath= site + "6.jpg", IsPortrait = true, CardWeight = 12.5},
         };
     }
 }

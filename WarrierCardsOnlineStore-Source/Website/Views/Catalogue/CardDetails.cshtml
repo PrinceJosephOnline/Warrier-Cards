@@ -1,21 +1,21 @@
 ﻿@model WarrierCards.Website.Models.CardDetailsModel
 
 <div class="center-panel">
-    <h2>Home &#10093;&#10093; @Model.CardDetails.CardName </h2>
-    <div class="float-left large-pane">
+    <h2 class="pageHeader">@Model.CardDetails.CardName </h2>
+    <div class="float-left large-pane boxed">
         @{ 
             Model.CardDetails.CardImages.Insert(0, Model.CardDetails.CardMainImagePath);
-            Html.RenderPartial("CardGallery", Model.CardDetails.CardImages); 
+            Html.RenderPartial("_CardGallery", Model.CardDetails.CardImages); 
         }
     </div>
 
     <div class="float-left small-pane boxed warrier-buttons">
-        @{  Html.RenderPartial("CardBasicView", (WarrierCards.Website.CatalogueService.CardBasicInfo)Model.CardDetails);  }
+        @{  Html.RenderPartial("_CardBasicInfo", (WarrierCards.Website.CatalogueService.CardBasicInfo)Model.CardDetails);  }
     </div>
-    
+
     <div class="clear" style="margin-top: 10px;"></div>
 
-    <div class="float-left large-pane">
+    <div class="float-left large-pane boxed">
         <div style="padding: 0.8em;">
             <div class="bold">About the product</div>
             This is a nice product, and this is a static dummy text.<br />
@@ -32,18 +32,19 @@
         </div>
     </div>
 
-    <div class="float-left" style="margin: 0 10px; border: 1px solid #dedede; width: 250px; height: 400px;">
-        This is test text.This is test text.
-        <br />
-        This is test text.This is test text.
-        <br />
-        This is test text. This is test text.<br />
-        This is test text. This is test text.<br />
-        This is test text. This is test text.<br />
+    <div class="float-left small-pane boxed">
+
+        <span class="bold">Similar Cards</span>
+        <div class="wrapper">
+            <span class="semiboldTtext">This is coming soon.
+                <br />
+                This is coming soon.
+                <br />
+                This is coming soon.
+                <br />
+            </span>
+        </div>
         @*FEED THIS WITH ASYNC AJAX CALL - PRINCE - TODO*@
+
     </div>
-
-
-</div>
-
 </div>

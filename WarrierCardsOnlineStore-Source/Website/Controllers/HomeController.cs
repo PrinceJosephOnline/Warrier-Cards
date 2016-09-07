@@ -16,14 +16,14 @@ namespace WarrierCards.Website.Controllers
 
             SearchCriteria criteria = new SearchCriteria();
             criteria.LowPrice = 21;
-
-            ICatalogueService catalogueService = new CatalogueServiceClient();
             HomeModel homeModel = new HomeModel();
-            homeModel.BestSellers = catalogueService.GetCardsList(criteria);
-
-            criteria.LowPrice = 21;
-            criteria.HighPrice = 150;
-            homeModel.PremiumCards = catalogueService.GetCardsList(criteria);
+            using (var catalogueService = new CatalogueServiceClient())
+            {
+                homeModel.BestSellers = catalogueService.GetCardsList(criteria);
+                criteria.LowPrice = 21;
+                criteria.HighPrice = 150;
+                homeModel.PremiumCards = catalogueService.GetCardsList(criteria);
+            }
 
             return View(homeModel);
         }

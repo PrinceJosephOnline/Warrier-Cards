@@ -1,50 +1,72 @@
-﻿@model WarrierCards.Website.Models.LoginModel
-
-@{
-    ViewBag.Title = "Log in";
+﻿@{
+    @model WarrierCards.Website.SecurityService.UserInfo
+    ViewBag.Title = "Login";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
+<h2>&#10093;&#10093; Login</h2>
 
-<section id="loginForm">
-<h2>Use a local account to log in.</h2>
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+@Html.ValidationSummary(true)
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    <div class="content-wrapper">
+        <div class="float-left small-pane boxed">
+            <p class="marginTop highlight">Existing Users - Login Here</p>
 
-    <fieldset>
-        <legend>Log in Form</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
+            @Html.AntiForgeryToken()
+            <div class="editor-field">
+                Email:<br />
+                @Html.TextBoxFor(m => m.Email)
+            </div>
+            <div class="editor-field">
+                Password:<br />
                 @Html.PasswordFor(m => m.Password)
-                @Html.ValidationMessageFor(m => m.Password)
-            </li>
-            <li>
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-            </li>
-        </ol>
-        <input type="submit" value="Log in" />
-    </fieldset>
-    <p>
-        @Html.ActionLink("Register", "Register") if you don't have an account.
-    </p>
-}
-</section>
+            </div>
+            <div class="editor-field">
+                <input name="RememberMe" type="checkbox" checked="checked" />
+                <span onclick="CheckUncheckByLabel(this)">Remember me</span>
+            </div>
+            <div class="editor-field">
+                <input type="submit" value="Log in" class="warrier-button small" onclick="SetAction(this, '/account/login');" />
+                <a href="~/account/reset" class="mainLink float-right">Forgot Password?</a>
+            </div>
+        </div>
 
-<section class="social" id="socialLoginForm">
-    <h2>Use another service to log in.</h2>
-    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-</section>
+        <div class="float-left small-pane boxed">
+            <p class="marginTop highlight">New Users - Register Here</p>
+            <div class="editor-field">
+                Firstname:<br />
+                @Html.TextBoxFor(m => m.FirstName)
+            </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+            <div class="editor-field">
+                Lastname:<br />
+                @Html.TextBoxFor(m => m.LastName)
+            </div>
+
+            <div class="editor-field">
+                Password:<br />
+                @Html.PasswordFor(m => m.Password)
+            </div>
+
+            <div class="editor-field">
+                Retype Password:<br />
+                @Html.PasswordFor(m => m.Password)
+            </div>
+
+            <div class="editor-field">
+                Email:<br />
+                @Html.TextBoxFor(m => m.Email)
+            </div>
+
+            <div class="editor-field">
+                Phone:<br />
+                @Html.TextBoxFor(m => m.CountryCode, new { maxlength = "3", @Value = "91", @style = "width:50px;" })
+                @Html.TextBoxFor(m => m.Phone, new { maxlength = "10", @style = "width: calc(78% - 80px);" })
+            </div>
+
+            <div class="editor-field marginTop">
+                <input type="submit" value="Register" class="warrier-button small" onclick="SetAction(this, '/account/register');" />
+            </div>
+        </div>
+    </div>
 }

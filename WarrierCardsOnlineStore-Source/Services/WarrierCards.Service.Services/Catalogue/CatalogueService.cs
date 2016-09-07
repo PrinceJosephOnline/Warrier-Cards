@@ -47,6 +47,43 @@ namespace WarrierCards.Service.Services.Catalogue
             return true;
         }
 
+        public List<ShippingAddress> GetShippingAddressesByUserId(int userId)
+        {
+            return null;
+        }
+
+        public int SaveShippingAddress(int userId, ShippingAddress address)
+        {
+
+            return 1;
+        }
+
+        public ShippingAddress GetShippingAddressById(int userId, int shippingId)
+        {
+            // TODO: make sure address belongs to the user, use userid
+            ShippingAddress addr = new ShippingAddress
+            {
+                RecipientName = "Prince Joseph",
+                AddressId = shippingId,
+                FullAddress = "test address",
+                Mobile = "91-9847399001",
+                Landmark = "Landmark1",
+                Pincode = "00065",
+                Country = "India"
+            };
+            return addr;
+        }
+
+        public OrderSummary GetOrderSummary(int userId, OrderSummaryParams args)
+        {
+            ShippingAddress addr = GetShippingAddressById(userId, args.ShippingAddressId);
+            List<SelectedCardInfo> cardsInfo = GetCardsInfoByIds(args.SelectedCards);
+            return DummyOrderSummaryCalculator.GetData(addr, cardsInfo, args);
+
+            //return new OrderSummary();
+
+        }
+
 
     }
 }

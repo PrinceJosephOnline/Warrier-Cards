@@ -16,13 +16,13 @@
                 <a href="~/">
                     <img src="@Url.Content("~/images/Warrier-Cards-Logo.png")" alt="" />
                 </a>
+                <h2>@Convert.ToInt32(System.Web.HttpContext.Current.Session["ShippingAddressId"])</h2>@* TODO: PRINCE - remove this, added for testing*@
                 @*<p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>*@
             </div>
             <div class="header-right">
                 <table id="header-nav">
                     <tr>
-                        <td colspan="2">
-                            Call us at: +91-9744-023-389
+                        <td colspan="2">Call us at: +91-9744-023-389
                         </td>
                     </tr>
                     <tr>
@@ -35,19 +35,20 @@
                         <td>
                             <a href="~/my/view-shortlist" class="nav-shortlist">Shortlist <sup class="sup"></sup></a>
                             <a href="~/my/view-cart" class="nav-cart">Cart <sup class="sup"></sup></a>
-                            <a href="~/my/view-cart" class="nav-user">Login</a>
+                            <a href="~/account/login" class="nav-user">Login</a>
+                            @*TODO: if the user is logged in, show logout, orders, etc*@
                         </td>
                     </tr>
                 </table>
 
             </div>
         </div>
-        <div id="menu-bar" style="float:none;clear:both;background: #359ac7;margin:0 auto;text-align: center;padding:8px 0;">
-            <a href="~/catalogue/Hindu-wedding-cards">Hindu Wedding Cards </a> |
-            <a href="~/catalogue/Muslim-wedding-cards">Muslim Wedding Cards </a> |           
-            <a href="~/catalogue/Christian-wedding-cards">Christian Wedding Cards </a> |
-            <a href="~/catalogue/Christian-wedding-cards">Invitation Cards </a> |
-            <a href="~/">Design your Card </a> |
+        <div id="menu-bar" style="float: none; clear: both; background: #359ac7; margin: 0 auto; text-align: center; padding: 8px 0;">
+            <a href="~/catalogue/Hindu-wedding-cards">Hindu Wedding Cards </a>|
+            <a href="~/catalogue/Muslim-wedding-cards">Muslim Wedding Cards </a>|           
+            <a href="~/catalogue/Christian-wedding-cards">Christian Wedding Cards </a>|
+            <a href="~/catalogue/Christian-wedding-cards">Invitation Cards </a>|
+            <a href="~/">Design your Card </a>|
             <a href="~/">Sell With Us </a>
         </div>
     </header>

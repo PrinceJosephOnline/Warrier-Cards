@@ -204,6 +204,9 @@ namespace WarrierCards.Website.CatalogueService {
         private decimal CardSellingPriceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CardWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsPortraitField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -290,6 +293,19 @@ namespace WarrierCards.Website.CatalogueService {
                 if ((this.CardSellingPriceField.Equals(value) != true)) {
                     this.CardSellingPriceField = value;
                     this.RaisePropertyChanged("CardSellingPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CardWeight {
+            get {
+                return this.CardWeightField;
+            }
+            set {
+                if ((this.CardWeightField.Equals(value) != true)) {
+                    this.CardWeightField = value;
+                    this.RaisePropertyChanged("CardWeight");
                 }
             }
         }
@@ -498,13 +514,22 @@ namespace WarrierCards.Website.CatalogueService {
         private int CardIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CountryCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FullnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string QueryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> UserIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WarrierCards.Website.CatalogueService.UserData UserInfoField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -526,92 +551,6 @@ namespace WarrierCards.Website.CatalogueService {
                     this.CardIdField = value;
                     this.RaisePropertyChanged("CardId");
                 }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Query {
-            get {
-                return this.QueryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.QueryField, value) != true)) {
-                    this.QueryField = value;
-                    this.RaisePropertyChanged("Query");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> UserId {
-            get {
-                return this.UserIdField;
-            }
-            set {
-                if ((this.UserIdField.Equals(value) != true)) {
-                    this.UserIdField = value;
-                    this.RaisePropertyChanged("UserId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WarrierCards.Website.CatalogueService.UserData UserInfo {
-            get {
-                return this.UserInfoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserInfoField, value) != true)) {
-                    this.UserInfoField = value;
-                    this.RaisePropertyChanged("UserInfo");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserData", Namespace="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects")]
-    [System.SerializableAttribute()]
-    public partial class UserData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CountryCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UserIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
             }
         }
         
@@ -642,27 +581,14 @@ namespace WarrierCards.Website.CatalogueService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FirstName {
+        public string Fullname {
             get {
-                return this.FirstNameField;
+                return this.FullnameField;
             }
             set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
+                if ((object.ReferenceEquals(this.FullnameField, value) != true)) {
+                    this.FullnameField = value;
+                    this.RaisePropertyChanged("Fullname");
                 }
             }
         }
@@ -681,7 +607,20 @@ namespace WarrierCards.Website.CatalogueService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UserId {
+        public string Query {
+            get {
+                return this.QueryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QueryField, value) != true)) {
+                    this.QueryField = value;
+                    this.RaisePropertyChanged("Query");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> UserId {
             get {
                 return this.UserIdField;
             }
@@ -689,6 +628,397 @@ namespace WarrierCards.Website.CatalogueService {
                 if ((this.UserIdField.Equals(value) != true)) {
                     this.UserIdField = value;
                     this.RaisePropertyChanged("UserId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ShippingAddress", Namespace="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects")]
+    [System.SerializableAttribute()]
+    public partial class ShippingAddress : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AddressIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CountryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FullAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LandmarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MobileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PincodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecipientNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AddressId {
+            get {
+                return this.AddressIdField;
+            }
+            set {
+                if ((this.AddressIdField.Equals(value) != true)) {
+                    this.AddressIdField = value;
+                    this.RaisePropertyChanged("AddressId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Country {
+            get {
+                return this.CountryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CountryField, value) != true)) {
+                    this.CountryField = value;
+                    this.RaisePropertyChanged("Country");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FullAddress {
+            get {
+                return this.FullAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FullAddressField, value) != true)) {
+                    this.FullAddressField = value;
+                    this.RaisePropertyChanged("FullAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Landmark {
+            get {
+                return this.LandmarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LandmarkField, value) != true)) {
+                    this.LandmarkField = value;
+                    this.RaisePropertyChanged("Landmark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Mobile {
+            get {
+                return this.MobileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MobileField, value) != true)) {
+                    this.MobileField = value;
+                    this.RaisePropertyChanged("Mobile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Pincode {
+            get {
+                return this.PincodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PincodeField, value) != true)) {
+                    this.PincodeField = value;
+                    this.RaisePropertyChanged("Pincode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecipientName {
+            get {
+                return this.RecipientNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecipientNameField, value) != true)) {
+                    this.RecipientNameField = value;
+                    this.RaisePropertyChanged("RecipientName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderSummaryParams", Namespace="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects")]
+    [System.SerializableAttribute()]
+    public partial class OrderSummaryParams : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<WarrierCards.Website.CatalogueService.SelectedCard> SelectedCardsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ShippingAddressIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string couponCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<WarrierCards.Website.CatalogueService.SelectedCard> SelectedCards {
+            get {
+                return this.SelectedCardsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SelectedCardsField, value) != true)) {
+                    this.SelectedCardsField = value;
+                    this.RaisePropertyChanged("SelectedCards");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ShippingAddressId {
+            get {
+                return this.ShippingAddressIdField;
+            }
+            set {
+                if ((this.ShippingAddressIdField.Equals(value) != true)) {
+                    this.ShippingAddressIdField = value;
+                    this.RaisePropertyChanged("ShippingAddressId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string couponCode {
+            get {
+                return this.couponCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.couponCodeField, value) != true)) {
+                    this.couponCodeField = value;
+                    this.RaisePropertyChanged("couponCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderSummary", Namespace="http://schemas.datacontract.org/2004/07/WarrierCards.Service.DataObjects")]
+    [System.SerializableAttribute()]
+    public partial class OrderSummary : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CouponCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal CouponDiscountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CouponErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal EstimatedTotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ShippingCostField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ShippingWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalSavingsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CouponCode {
+            get {
+                return this.CouponCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CouponCodeField, value) != true)) {
+                    this.CouponCodeField = value;
+                    this.RaisePropertyChanged("CouponCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal CouponDiscount {
+            get {
+                return this.CouponDiscountField;
+            }
+            set {
+                if ((this.CouponDiscountField.Equals(value) != true)) {
+                    this.CouponDiscountField = value;
+                    this.RaisePropertyChanged("CouponDiscount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CouponError {
+            get {
+                return this.CouponErrorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CouponErrorField, value) != true)) {
+                    this.CouponErrorField = value;
+                    this.RaisePropertyChanged("CouponError");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal EstimatedTotal {
+            get {
+                return this.EstimatedTotalField;
+            }
+            set {
+                if ((this.EstimatedTotalField.Equals(value) != true)) {
+                    this.EstimatedTotalField = value;
+                    this.RaisePropertyChanged("EstimatedTotal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal ShippingCost {
+            get {
+                return this.ShippingCostField;
+            }
+            set {
+                if ((this.ShippingCostField.Equals(value) != true)) {
+                    this.ShippingCostField = value;
+                    this.RaisePropertyChanged("ShippingCost");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ShippingWeight {
+            get {
+                return this.ShippingWeightField;
+            }
+            set {
+                if ((this.ShippingWeightField.Equals(value) != true)) {
+                    this.ShippingWeightField = value;
+                    this.RaisePropertyChanged("ShippingWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Total {
+            get {
+                return this.TotalField;
+            }
+            set {
+                if ((this.TotalField.Equals(value) != true)) {
+                    this.TotalField = value;
+                    this.RaisePropertyChanged("Total");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal TotalSavings {
+            get {
+                return this.TotalSavingsField;
+            }
+            set {
+                if ((this.TotalSavingsField.Equals(value) != true)) {
+                    this.TotalSavingsField = value;
+                    this.RaisePropertyChanged("TotalSavings");
                 }
             }
         }
@@ -736,6 +1066,30 @@ namespace WarrierCards.Website.CatalogueService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICatalogueService/SendEnquiry", ReplyAction="http://tempuri.org/ICatalogueService/SendEnquiryResponse")]
         System.Threading.Tasks.Task<bool> SendEnquiryAsync(WarrierCards.Website.CatalogueService.EnquiryData enquiry);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICatalogueService/GetShippingAddressesByUserId", ReplyAction="http://tempuri.org/ICatalogueService/GetShippingAddressesByUserIdResponse")]
+        System.Collections.Generic.List<WarrierCards.Website.CatalogueService.ShippingAddress> GetShippingAddressesByUserId(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICatalogueService/GetShippingAddressesByUserId", ReplyAction="http://tempuri.org/ICatalogueService/GetShippingAddressesByUserIdResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WarrierCards.Website.CatalogueService.ShippingAddress>> GetShippingAddressesByUserIdAsync(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICatalogueService/SaveShippingAddress", ReplyAction="http://tempuri.org/ICatalogueService/SaveShippingAddressResponse")]
+        int SaveShippingAddress(int userId, WarrierCards.Website.CatalogueService.ShippingAddress address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICatalogueService/SaveShippingAddress", ReplyAction="http://tempuri.org/ICatalogueService/SaveShippingAddressResponse")]
+        System.Threading.Tasks.Task<int> SaveShippingAddressAsync(int userId, WarrierCards.Website.CatalogueService.ShippingAddress address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICatalogueService/GetShippingAddressById", ReplyAction="http://tempuri.org/ICatalogueService/GetShippingAddressByIdResponse")]
+        WarrierCards.Website.CatalogueService.ShippingAddress GetShippingAddressById(int userId, int shippingId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICatalogueService/GetShippingAddressById", ReplyAction="http://tempuri.org/ICatalogueService/GetShippingAddressByIdResponse")]
+        System.Threading.Tasks.Task<WarrierCards.Website.CatalogueService.ShippingAddress> GetShippingAddressByIdAsync(int userId, int shippingId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICatalogueService/GetOrderSummary", ReplyAction="http://tempuri.org/ICatalogueService/GetOrderSummaryResponse")]
+        WarrierCards.Website.CatalogueService.OrderSummary GetOrderSummary(int userId, WarrierCards.Website.CatalogueService.OrderSummaryParams args);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICatalogueService/GetOrderSummary", ReplyAction="http://tempuri.org/ICatalogueService/GetOrderSummaryResponse")]
+        System.Threading.Tasks.Task<WarrierCards.Website.CatalogueService.OrderSummary> GetOrderSummaryAsync(int userId, WarrierCards.Website.CatalogueService.OrderSummaryParams args);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -803,6 +1157,38 @@ namespace WarrierCards.Website.CatalogueService {
         
         public System.Threading.Tasks.Task<bool> SendEnquiryAsync(WarrierCards.Website.CatalogueService.EnquiryData enquiry) {
             return base.Channel.SendEnquiryAsync(enquiry);
+        }
+        
+        public System.Collections.Generic.List<WarrierCards.Website.CatalogueService.ShippingAddress> GetShippingAddressesByUserId(int userId) {
+            return base.Channel.GetShippingAddressesByUserId(userId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WarrierCards.Website.CatalogueService.ShippingAddress>> GetShippingAddressesByUserIdAsync(int userId) {
+            return base.Channel.GetShippingAddressesByUserIdAsync(userId);
+        }
+        
+        public int SaveShippingAddress(int userId, WarrierCards.Website.CatalogueService.ShippingAddress address) {
+            return base.Channel.SaveShippingAddress(userId, address);
+        }
+        
+        public System.Threading.Tasks.Task<int> SaveShippingAddressAsync(int userId, WarrierCards.Website.CatalogueService.ShippingAddress address) {
+            return base.Channel.SaveShippingAddressAsync(userId, address);
+        }
+        
+        public WarrierCards.Website.CatalogueService.ShippingAddress GetShippingAddressById(int userId, int shippingId) {
+            return base.Channel.GetShippingAddressById(userId, shippingId);
+        }
+        
+        public System.Threading.Tasks.Task<WarrierCards.Website.CatalogueService.ShippingAddress> GetShippingAddressByIdAsync(int userId, int shippingId) {
+            return base.Channel.GetShippingAddressByIdAsync(userId, shippingId);
+        }
+        
+        public WarrierCards.Website.CatalogueService.OrderSummary GetOrderSummary(int userId, WarrierCards.Website.CatalogueService.OrderSummaryParams args) {
+            return base.Channel.GetOrderSummary(userId, args);
+        }
+        
+        public System.Threading.Tasks.Task<WarrierCards.Website.CatalogueService.OrderSummary> GetOrderSummaryAsync(int userId, WarrierCards.Website.CatalogueService.OrderSummaryParams args) {
+            return base.Channel.GetOrderSummaryAsync(userId, args);
         }
     }
 }
